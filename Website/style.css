@@ -1,0 +1,9 @@
+.main-header {
+    background-color: rgba(0,0,0,0.6)
+}
+
+.nav li{
+    display: inline-block;
+    padding: 0.5em;
+    color: rgb(11, 11, 103);
+}
