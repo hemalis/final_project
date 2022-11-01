@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
     <header class="main-header">
@@ -21,18 +23,65 @@
     </header>
     <h1>Index</h1>
         <h3>Prediction of AAPL for October 31st, 2022</h3>
-        <p>Graph</p>
-    <div>
-        <button type="button">Daily</button>
-        <button type="button">Weekly</button>
-        <button type="button">Monthly</button>
-    </div>
-        <div>
-            <p>Top 5 Daily Predictions for October 31th, 2022</p>
-            <p>Graph</p>
+        <!-- Example -->
+        <div id="AAPL">
+            <script src="../stock.js"></script>
         </div>
         <div>
-            <p>Enter a stock for price prediction</p>
+            <button type="button">Daily</button>
+            <button type="button">Weekly</button>
+            <button type="button">Monthly</button>
+        </div>
+        <div>
+            <p>Top 5 Daily Predictions for October 31th, 2022</p>
+        </div>
+        <div>
+            <p>Enter a crypto for price prediction</p>
+            <input type="string" value="">
+            <button type="button">Search</button>
+            <!-- Example -->
+            <table class="prediction-table" border="1">
+                <thead>
+                    <tr>
+                        <td>Ticker</td>
+                        <td>Close Price</td>
+                        <td>Prediction</td>
+                        <td>Accuracy</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AAPL</td>
+                        <td>$153.34</td>
+                        <td>$155.2</td>
+                        <td>88%</td>
+                    </tr>
+                    <tr>
+                        <td>TSLA</td>
+                        <td>$227.54</td>
+                        <td>$223.78</td>
+                        <td>81%</td>
+                    </tr>
+                    <tr>
+                        <td>GOOGL</td>
+                        <td>$94.51</td>
+                        <td>$92.1</td>
+                        <td>83%</td>
+                    </tr>
+                    <tr>
+                        <td>META</td>
+                        <td>$93.16</td>
+                        <td>$95.2</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>AMZN</td>
+                        <td>$102.44</td>
+                        <td>$106.2</td>
+                        <td>80%</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 </body>
 </html>

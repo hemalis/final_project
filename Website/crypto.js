@@ -28,11 +28,9 @@ var layout = {
   dragmode: 'zoom',
   showlegend: false,
   xaxis: {
-    title: 'Date',
-   range: ['2016-06-01 12:00', '2017-01-01 12:00']
-  },
-  yaxis: {
-    autorange: true,
+    rangeslider: {
+		 visible: false
+	 }
   }
 };
 

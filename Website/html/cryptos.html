@@ -7,6 +7,7 @@
     <title>Stock and Crypto Prediction</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
     <header class="main-header">
@@ -22,6 +23,7 @@
     </header>
     <h1>Index</h1>
         <h3>Prediction of BTC for October 31st, 2022</h3>
+        <!-- Example -->
         <div id="AAPL">
             <script src="../crypto.js"></script>
         </div>
@@ -35,7 +37,51 @@
         </div>
         <div>
             <p>Enter a crypto for price prediction</p>
-            <p>Graph</p>
+            <input type="string" value="">
+            <button type="button">Search</button>
+            <!-- Example -->
+            <table class="prediction-table" border="1">
+                <thead>
+                    <tr>
+                        <td>Ticker</td>
+                        <td>Close Price</td>
+                        <td>Prediction</td>
+                        <td>Accuracy</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BTC</td>
+                        <td>$20,000</td>
+                        <td>$20,500</td>
+                        <td>88%</td>
+                    </tr>
+                    <tr>
+                        <td>ETH</td>
+                        <td>$1,500</td>
+                        <td>$1,420</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>ADA</td>
+                        <td>$0.41</td>
+                        <td>$0.35</td>
+                        <td>86%</td>
+                    </tr>
+                    <tr>
+                        <td>DOT</td>
+                        <td>$6.65</td>
+                        <td>$6.42</td>
+                        <td>87%</td>
+                    </tr>
+                    <tr>
+                        <td>SOL</td>
+                        <td>$32.86</td>
+                        <td>$31.2</td>
+                        <td>81%</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 </body>
 </html>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
     <header class="main-header">
@@ -24,6 +26,9 @@
             <p>Enter a stock or cryptos for price prediction</p>
             <input type="string" value="index">
             <button type="button">Search</button>
+            <div id="AAPL">
+                <script src="../stock.js"></script>
+            </div>
         </div>
 </body>
 </html>
