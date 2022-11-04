@@ -152,7 +152,7 @@ ul {
 .Prediction-panel {
     grid-column-start: span 3;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-gap: 2em;
     margin: 3em 0;
 }
@@ -160,29 +160,13 @@ ul {
 .Prediction-panel > div {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    padding: 1em;
+    padding: 2em;
 }
 
 .Prediction-panel h1 {
-    margin: 0.5em 0;
+    margin: 0.5em;
 }
 
-.Prediction-panel small {
-    color: #fff;
-}
-
-.Prediction-panel > div:nth-child(even) {
-    background: linear-gradient(0deg, #b52b4b, #ea335d);
-}
-
-.Prediction-panel > div:nth-child(odd) {
-    background: linear-gradient(0deg, #178add, #03dcee);
-}
-
-.text {
-    padding: 1em;
-}
-
-.text-vertical {
-    grid-row-start: span 5;
+.Prediction-panel > div {
+    background: linear-gradient(0deg, #55aadb, #0187d4);
 }

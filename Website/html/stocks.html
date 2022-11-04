@@ -10,78 +10,92 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav main-nav">
-            <ul>
-                <h1>Trading Prediction</h1>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="stocks.html">Stocks</a></li>
-                <li><a href="cryptos.html">Cryptos</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>Index</h1>
-        <h3>Prediction of AAPL for October 31st, 2022</h3>
-        <!-- Example -->
-        <div id="AAPL">
-            <script src="../stock.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <div>
+                <h1>Deep learning</h1>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="stocks.html" class="active">Stocks</a>
+                        </li>
+                        <li>
+                            <a href="cryptos.html">Cryptos</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-            <button type="button">Daily</button>
-            <button type="button">Weekly</button>
-            <button type="button">Monthly</button>
+    </nav>
+    
+    <div class="graph" id="AAPL"></div>
+            
+    <main class="dashboard">
+        <div class="panel list">
+            <li>
+                <h2>AAPL</h2>
+                <span>Days</span>
+            </li>
+            <li>
+                <h4>Monday</h4>
+                <span>$149</span>
+            </li>
+            <li>
+                <h4>Tuesday</h4>
+                <span>$152</span>
+            </li>
+            <li>
+                <h4>Wednesday</h4>
+                <span>$155</span>
+            </li>
+            <li>
+                <h4>Thursday</h4>
+                <span>$144</span>
+            </li>
+            <li>
+                <h4>Friday</h4>
+                <span>$142</span>
+            </li>
         </div>
-        <div>
-            <p>Top 5 Daily Predictions for October 31th, 2022</p>
+
+        <div class="Prediction-panel">
+            <div>
+                <h4>Daily Prediction</h4>
+                <h1>150</h1>
+                <small>Accuracy rate of 81%</small>
+            </div>
+            <div>
+                <h4>Weekly Prediction</h4>
+                <h1>148</h1>
+                <small>Accuracy rate of 83%</small>
+            </div>
+            <div>
+                <h4>Monthly Prediction</h4>
+                <h1>138</h1>
+                <small>Accuracy rate of 87%</small>
+            </div>
+            <div>
+                <h4>Yearly Prediction</h4>
+                <h1>168</h1>
+                <small>Accuracy rate of 87%</small>
+            </div>
         </div>
-        <div>
-            <p>Enter a crypto for price prediction</p>
-            <input type="string" value="">
-            <button type="button">Search</button>
-            <!-- Example -->
-            <table class="prediction-table" border="1">
-                <thead>
-                    <tr>
-                        <td>Ticker</td>
-                        <td>Close Price</td>
-                        <td>Prediction</td>
-                        <td>Accuracy</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AAPL</td>
-                        <td>$153.34</td>
-                        <td>$155.2</td>
-                        <td>88%</td>
-                    </tr>
-                    <tr>
-                        <td>TSLA</td>
-                        <td>$227.54</td>
-                        <td>$223.78</td>
-                        <td>81%</td>
-                    </tr>
-                    <tr>
-                        <td>GOOGL</td>
-                        <td>$94.51</td>
-                        <td>$92.1</td>
-                        <td>83%</td>
-                    </tr>
-                    <tr>
-                        <td>META</td>
-                        <td>$93.16</td>
-                        <td>$95.2</td>
-                        <td>85%</td>
-                    </tr>
-                    <tr>
-                        <td>AMZN</td>
-                        <td>$102.44</td>
-                        <td>$106.2</td>
-                        <td>80%</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="panel text text-vertical">
+            <h1>Information</h1>
+            <small>Market Cap</small>
         </div>
+        <div class="panel text text-vertical">
+            <h1>Analysis</h1>
+            <small>Daily Volumn</small>
+        </div>
+    </main>
+    <script src="../stock.js"></script>
 </body>
 </html>

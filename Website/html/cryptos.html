@@ -10,78 +10,92 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav main-nav">
-            <ul>
-                <h1>Trading Prediction</h1>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="stocks.html">Stocks</a></li>
-                <li><a href="cryptos.html">Cryptos</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1>Index</h1>
-        <h3>Prediction of BTC for October 31st, 2022</h3>
-        <!-- Example -->
-        <div id="AAPL">
-            <script src="../crypto.js"></script>
+    <nav class="navbar">
+        <div class="container">
+            <div>
+                <h1>Deep learning</h1>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="stocks.html">Stock</a>
+                        </li>
+                        <li>
+                            <a href="cryptos.html" class="active">Crypto</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-            <button type="button">Daily</button>
-            <button type="button">Weekly</button>
-            <button type="button">Monthly</button>
+    </nav>
+    
+    <div class="graph" id="AAPL"></div>
+            
+    <main class="dashboard">
+        <div class="panel list">
+            <li>
+                <h2>BTC</h2>
+                <span>Days</span>
+            </li>
+            <li>
+                <h4>Monday</h4>
+                <span>$20,019</span>
+            </li>
+            <li>
+                <h4>Tuesday</h4>
+                <span>$20,552</span>
+            </li>
+            <li>
+                <h4>Wednesday</h4>
+                <span>$21,862</span>
+            </li>
+            <li>
+                <h4>Thursday</h4>
+                <span>$21,903</span>
+            </li>
+            <li>
+                <h4>Friday</h4>
+                <span>$20,402</span>
+            </li>
         </div>
-        <div>
-            <p>Top 5 Daily Predictions for October 31th, 2022</p>
+
+        <div class="Prediction-panel">
+            <div>
+                <h4>Daily Prediction</h4>
+                <h1>$20,102</h1>
+                <small>Accuracy rate of 85%</small>
+            </div>
+            <div>
+                <h4>Weekly Prediction</h4>
+                <h1>$21,942</h1>
+                <small>Accuracy rate of 88%</small>
+            </div>
+            <div>
+                <h4>Monthly Prediction</h4>
+                <h1>$22,109</h1>
+                <small>Accuracy rate of 79%</small>
+            </div>
+            <div>
+                <h4>Yearly Prediction</h4>
+                <h1>$40,294</h1>
+                <small>Accuracy rate of 81%</small>
+            </div>
         </div>
-        <div>
-            <p>Enter a crypto for price prediction</p>
-            <input type="string" value="">
-            <button type="button">Search</button>
-            <!-- Example -->
-            <table class="prediction-table" border="1">
-                <thead>
-                    <tr>
-                        <td>Ticker</td>
-                        <td>Close Price</td>
-                        <td>Prediction</td>
-                        <td>Accuracy</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>BTC</td>
-                        <td>$20,000</td>
-                        <td>$20,500</td>
-                        <td>88%</td>
-                    </tr>
-                    <tr>
-                        <td>ETH</td>
-                        <td>$1,500</td>
-                        <td>$1,420</td>
-                        <td>85%</td>
-                    </tr>
-                    <tr>
-                        <td>ADA</td>
-                        <td>$0.41</td>
-                        <td>$0.35</td>
-                        <td>86%</td>
-                    </tr>
-                    <tr>
-                        <td>DOT</td>
-                        <td>$6.65</td>
-                        <td>$6.42</td>
-                        <td>87%</td>
-                    </tr>
-                    <tr>
-                        <td>SOL</td>
-                        <td>$32.86</td>
-                        <td>$31.2</td>
-                        <td>81%</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="panel text text-vertical">
+            <h1>Information</h1>
+            <small>Market Cap</small>
         </div>
+        <div class="panel text text-vertical">
+            <h1>Analysis</h1>
+            <small></small>
+        </div>
+    </main>
+    <script src="../stock.js"></script>
 </body>
 </html>
