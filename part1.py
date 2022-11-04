@@ -8,30 +8,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 from alpha_vantage.timeseries import TimeSeries # pip install alpha-vantage
 
-# Set up initial key and financial category
-
-key = "M1VXGBGEA8QLPLUF" # Use your own API Key or support my channel if you're using mine :)
-# change output to right format
-ts = TimeSeries(key, output_format='pandas') # 'pandas' or 'json' or 'csv'
-ttm_data, ttm_meta_data = ts.get_intraday(symbol='TTM',interval='1min', outputsize='compact')
-df = ttm_data.iloc[:50].copy()
-df=df.transpose()
-df.rename(index={"1. open":"open", "2. high":"high", "3. low":"low",
-                 "4. close":"close","5. volume":"volume"},inplace=True)
-df=df.reset_index().rename(columns={'index': 'indicator'})
-df = pd.melt(df,id_vars=['indicator'],var_name='date',value_name='rate')
-df = df[df['indicator']!='volume']
-
-# df.to_csv("data.csv", index=False)
-# exit()
-
-# to read the data we download from the API
-dff = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Analytic_Web_Apps/Financial/data.csv")
+dff = pd.read_csv("data2.csv")
 dff = dff[dff.indicator.isin(['high'])]
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
                 meta_tags=[{'name': 'viewport',
-                            'content': 'width=device-width, initial-scale=1.0'}])
+                            'content': 'width=device-width, initial-scale=1.0'}]
+                )
 
 app.layout = dbc.Container([
     dbc.Row([
@@ -39,48 +22,50 @@ app.layout = dbc.Container([
             dbc.Card(
                 [
                     dbc.CardImg(
-                        src="/assets/APPL.png",
+                        src="/assets/AAPL.png",
                         top=True,
-                        style={"width": "6rem"},
-                    ),
-
+                        style={"width": "8rem"},
+                        className="ml-3"),
                     dbc.CardBody([
                         dbc.Row([
                             dbc.Col([
-                                html.P("Change During (1D)")
-                            ]),
+                                html.P("CHANGE (1D)", className="ml-3")
+                            ],width={'size':5, 'offset':1}),
 
                             dbc.Col([
                                 dcc.Graph(id='indicator-graph', figure={},
-                                          config={'displayModeBar':False})
-                            ])
+                                          config={'displayModeBar':False},
+                                          )
+                            ], width={'size':3,'offset':2})
                         ]),
 
                         dbc.Row([
                             dbc.Col([
                                 dcc.Graph(id='daily-line', figure={},
                                           config={'displayModeBar':False})
-                            ])
+                            ], width=12)
                         ]),
 
                         dbc.Row([
                             dbc.Col([
-                                dbc.Button("Selling Price"),
-                            ]),
+                                dbc.Button("SELL", className="ml-5"),
+                            ], width=4),
 
                             dbc.Col([
-                                dbc.Button("Buy Price")
-                            ])
-                        ]),
+                                dbc.Button("BUY")
+                            ], width=4)
+                        ], justify="between"),
 
                         dbc.Row([
                             dbc.Col([
-                                dbc.Label(id='low-price', children="150.000"),
-                            ]),
+                                dbc.Label(id='low-price',children= "12.000",
+                                          className="mt-2 ml-5 bg-white p-1 border border-primary border-top-0"),
+                            ],width=4),
                             dbc.Col([
-                                dbc.Label(id='high-price', children="155.000"),
-                            ])
-                        ])
+                                dbc.Label(id='high-price',
+                                          className="mt-2 bg-white p-1 border border-primary border-top-0"),
+                            ], width=4)
+                        ], justify="between")
                     ]),
                 ],
                 style={"width": "24rem"},
@@ -88,8 +73,7 @@ app.layout = dbc.Container([
             )
         ], width=6)
     ], justify='center'),
-
-    dcc.Interval(id='update', n_intervals=0, interval=1000*10)
+    dcc.Interval(id='update', n_intervals=0, interval=1000*15)
 ])
 
 # Indicator Graph
@@ -117,9 +101,74 @@ def update_graph(timer):
     return fig
 
 
+# Line Graph
+@app.callback(
+    Output('daily-line', 'figure'),
+    Input('update', 'n_intervals')
+)
+def update_graph(timer):
+    dff_rv = dff.iloc[::-1]
+    fig = px.line(dff_rv, x='date', y='rate',
+                   range_y=[dff_rv['rate'].min(), dff_rv['rate'].max()],
+                   height=120).update_layout(margin=dict(t=0, r=0, l=0, b=20),
+                                             paper_bgcolor='rgba(0,0,0,0)',
+                                             plot_bgcolor='rgba(0,0,0,0)',
+                                             yaxis=dict(
+                                             title=None,
+                                             showgrid=False,
+                                             showticklabels=False
+                                             ),
+                                             xaxis=dict(
+                                             title=None,
+                                             showgrid=False,
+                                             showticklabels=False
+                                             ))
+
+    day_start = dff_rv[dff_rv['date'] == dff_rv['date'].min()]['rate'].values[0]
+    day_end = dff_rv[dff_rv['date'] == dff_rv['date'].max()]['rate'].values[0]
+
+    if day_end >= day_start:
+        return fig.update_traces(fill='tozeroy',line={'color':'green'})
+    elif day_end < day_start:
+        return fig.update_traces(fill='tozeroy',
+                             line={'color': 'red'})
+
+# Below the buttons--------------------------------------------------------
+@app.callback(
+    Output('high-price', 'children'),
+    Output('high-price', 'className'),
+    Input('update', 'n_intervals')
+)
+def update_graph(timer):
+    # key = "M1VXGBGEA8QLPLUF" # Your API Key
+    # https://github.com/RomelTorres/alpha_vantage
+    # Chose your output format or default to JSON (python dict)
+    # ts = TimeSeries(key, output_format='pandas') # 'pandas' or 'json' or 'csv'
+    ttm_data, ttm_meta_data = ts.get_intraday(symbol='TTM',interval='15min', outputsize='compact')
+    df = ttm_data.iloc[:50].copy()
+    df=df.transpose()
+    df.rename(index={"1. open":"open", "2. high":"high", "3. low":"low",
+                     "4. close":"close","5. volume":"volume"},inplace=True)
+    df = df.reset_index().rename(columns={'index': 'indicator'})
+    df = pd.melt(df,id_vars=['indicator'],var_name='date',value_name='rate')
+    df = df[df['indicator']!='volume']
+
+    df = df[df.indicator.isin(['high'])]
+    df['date'] = pd.to_datetime(df['date'])
+    two_recent_times = df['date'].nlargest(2)
+    df = df[df['date'].isin(two_recent_times.values)]
+    recent_high = df['rate'].iloc[0]
+    older_high = df['rate'].iloc[1]
+    print(recent_high, older_high)
+
+    if recent_high > older_high:
+        return recent_high, "mt-2 bg-success text-white p-1 border border-primary border-top-0"
+    elif recent_high == older_high:
+        return recent_high, "mt-2 bg-white p-1 border border-primary border-top-0"
+    elif recent_high < older_high:
+        return recent_high, "mt-2 bg-danger text-white p-1 border border-primary border-top-0"
+
+
 if __name__=='__main__':
-    app.run_server(debug=True, port=3000)
-
-### Created everything that has ticker price change and percentage change and need to add graph and color changes due to price
-
+    app.run_server(debug=True, port=8000)
 
