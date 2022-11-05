@@ -109,47 +109,8 @@ ul {
     overflow-x: hidden;
 }
 
-.graph {
-    background-color: #17204200;
-    padding: 3em;
-    display: grid;
-    justify-content: right;
-    grid-gap: 1em;
-    position: absolute;
-    top: 4.1em;
-    right: 0px;
-    width: calc(100% - 30em);
-    overflow-x: hidden;
-}
-
-.panel {
-    background: linear-gradient(
-        90deg, #262a4f, #122422
-    );
-    box-shadow: 
-        -5px -5px 8px #11163c,
-        5px 5px 5px #11163c;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5em
-}
-
-.list li:not(:last-child) {
-    border-bottom: 1px #2a335e solid;
-}
-
-.list span{
-    color: #b7e8ec;
-}
-
 /* Prediction panel */
-.Prediction-panel {
+.about-panel {
     grid-column-start: span 3;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -157,16 +118,68 @@ ul {
     margin: 3em 0;
 }
 
-.Prediction-panel > div {
+.about-panel > div {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     padding: 2em;
 }
 
-.Prediction-panel h1 {
+.about-panel h1 {
     margin: 0.5em;
 }
 
-.Prediction-panel > div {
+.about-panel > div {
     background: linear-gradient(0deg, #55aadb, #0187d4);
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+.section{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #172042;
+    padding-top: 50px;
+}
+
+.container{
+	width: 80%;
+	display: block;
+	margin:auto;
+	padding-top: 100px;
+}
+
+.content-section{
+	float: left;
+	width: 55%;
+}
+
+.image-section{
+	float: right;
+	width: 40%;
+}
+
+.image-section img{
+	width: 100%;
+	height: auto;
+    border: solid rgb(154, 166, 229);
+    border-radius: 15px;
+}
+
+.content-section .title{
+	text-transform: uppercase;
+	font-size: 28px;
+}
+
+.content-section .content p{
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.github {
+    color: #fff;
+}
+
+

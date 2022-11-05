@@ -171,12 +171,16 @@ ul {
     color: #fff;
 }
 
-.Prediction-panel > div:nth-child(even) {
+/* .Prediction-panel > div:nth-child(even) {
     background: linear-gradient(0deg, #b52b4b, #ea335d);
-}
+} */
 
-.Prediction-panel > div:nth-child(odd) {
+/* .Prediction-panel > div:nth-child(odd) {
     background: linear-gradient(0deg, #178add, #03dcee);
+} */
+
+.Prediction-panel > div {
+    background: linear-gradient(0deg, rgb(122, 170, 176), #02cee1);
 }
 
 .text {
