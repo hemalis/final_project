@@ -99,22 +99,18 @@ ul {
     background-color: #17204200;
     padding: 5em;
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr;
-    justify-content: center;
-    grid-gap: 2em;
-    position: absolute;
-    top: 5em;
-    right: 0;
+    grid-template-columns: 0.2fr 1fr;
+    position:absolute;
+    top: 6em; 
     width: calc(106.5% - 17em);
     overflow-x: hidden;
 }
 
 .graph {
     background-color: #17204200;
-    padding: 3em;
+    padding: 5em;
     display: grid;
     justify-content: right;
-    grid-gap: 1em;
     position: absolute;
     top: 4.1em;
     right: 0px;
@@ -148,7 +144,8 @@ ul {
     color: #b7e8ec;
 }
 
-/* Prediction panel */
+/* Prediction section */
+
 .Prediction-panel {
     grid-column-start: span 3;
     display: grid;
@@ -183,10 +180,29 @@ ul {
     background: linear-gradient(0deg, rgb(122, 170, 176), #02cee1);
 }
 
-.text {
-    padding: 1em;
+/* Information Section */
+
+.box-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    background-color: #02cee1;
 }
 
-.text-vertical {
-    grid-row-start: span 5;
+.button {
+    border: 0;
+    font-weight: bold;
+    font-size:1.1em;
+    background-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    color: #00eaff;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #ffffff1e;
 }

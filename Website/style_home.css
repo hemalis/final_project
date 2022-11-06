@@ -1,0 +1,158 @@
+/* General Body */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background: #172042;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    color: #6b6f8a;
+    font-size: 0.9em;
+}
+
+small {
+    color: #6b6f8a;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c1839;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6b6f8a;
+}
+
+/* Navbar */
+.navbar {
+    text-decoration: none;
+    background-color:  #1c2147;
+    z-index: 3;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar .container {
+    max-width: 1250px;
+    padding: 2em;
+    margin: 0 auto;
+}
+
+.navbar .container > div {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    align-items: center;
+}
+
+.navbar ul {
+    display: inline-block;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+.navbar ul a {
+    font-size:1em;
+    text-transform: uppercase;
+    color: #6b6f8a;
+    padding-bottom: 0.2em;
+    transition: 0.3s;
+}
+
+.navbar ul a:hover {
+    color: #fff;
+}
+
+.navbar .active {
+    border-bottom: 2px #03dcee solid;
+    color: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+.section{
+	background-color: #172042;
+    padding-top: 50px;
+}
+
+
+.container-body {
+	text-transform: uppercase;
+	font-size: 28px;
+	padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box{
+	width: 100%;
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 10px 40px;
+}
+
+.search-box input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+}
+
+.search-box button img {
+    width: 30px;
+}
+
+.search-box button {
+    border: 0;
+    border-radius: 50%;
+    background: #58629b00;
+}
+
+.section .graph{
+    padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

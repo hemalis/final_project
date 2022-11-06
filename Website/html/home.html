@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
-    <link rel="stylesheet" href="../style_about.css">
+    <link rel="stylesheet" href="../style_home.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style>
+        .graph {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -34,9 +40,20 @@
         </div>
     </nav>
 
-    <main class="Search">
-        <h1>Index</h1>
-    </main>
-
+    <div class="section">
+        <div class="container-body">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Index</h1>
+                </div>
+                <form action="https://www.google.com/search" method="get" class="search-box">
+                    <input type="text" placeholder="AAPL">
+                    <button type="submit"><img src="../images/search.png"></button>
+                </form>
+            </div>
+        </div>
+        <div class="graph" id="AAPL"></div>
+    </div>
+    <script src="../stock.js"></script>
 </body>
 </html>

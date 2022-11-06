@@ -132,26 +132,35 @@ ul {
     background: linear-gradient(0deg, #55aadb, #0187d4);
 }
 
-
+/* Body */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
 .section{
 	width: 100%;
-	min-height: 100vh;
 	background-color: #172042;
     padding-top: 50px;
 }
 
-.container{
+/* #line {     
+    text-decoration: 3px underline;    
+    text-decoration-color: #6b6f8a; 
+    text-underline-offset: 10px;
+} */
+
+.container-body{
 	width: 80%;
 	display: block;
 	margin:auto;
 	padding-top: 100px;
 }
 
-.content-section{
+.about{
 	float: left;
 	width: 55%;
+}
+
+.content {
+    padding: 0;
 }
 
 .image-section{
@@ -178,8 +187,53 @@ ul {
 	line-height: 1.5;
 }
 
-.github {
+.members {
+    width: 100%;
+	display: grid;
+}
+
+.members h2{
+    padding-top: 50px;
+    font-size: 40px;
+}
+
+.members h3 {
+    width: 13.5%;
+    display: inline-flex;
+    margin-right: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: rgb(84, 136, 225);
+    align-items: center;
+    justify-content: left;
+}
+
+.members h3 a{
+    padding-right: 20px;
+}
+
+.members h3 a:hover{
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #ffffff38;
+}
+
+.codes {
+    font-size: 20px;
+    padding-top: 20px;
     color: #fff;
+}
+
+.github {
+    padding-top: 20px;
+}
+
+.github:hover{
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #ffffff38;
 }
 
 
