@@ -169,5 +169,3 @@ PostgresSQL was used to store and manipulate.  Please see image below. 'code sho
 - 2 years of historical data
 - CoinGecko: https://www.coingecko.com/
 - Yahoo Finance: https://finance.yahoo.com/
-
-
