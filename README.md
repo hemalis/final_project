@@ -122,14 +122,13 @@ ON "Stock_prediction" ("ticker");
 ```
 
 ### Machine Learning Model
-
-To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume. It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.
+To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume.  It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.  
 
 #### Facebook Prophet Model
-
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
 
 #### LSTM Model
+LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
 
 #### Database
 
