@@ -13,10 +13,10 @@ purchasing cryptos and stocks.
 
 ### Motivation
 
-Since the Pandemic, stock markets and cryptocurrency have shown different 
-patterns. The stock market was constantly up and broke some records, however 
-cryptocurrency's price has drastically fallen. Since crypto and blockchain is the 
-future for the web, we were highly interested in learning about these topics & 
+Since the Pandemic, stock markets and cryptocurrency have shown different
+patterns. The stock market was constantly up and broke some records, however
+cryptocurrency's price has drastically fallen. Since crypto and blockchain is the
+future for the web, we were highly interested in learning about these topics &
 would like to deep dive into it.
 
 ### Questions to answer
@@ -123,15 +123,18 @@ ON "Stock_prediction" ("ticker");
 
 ### Machine Learning Model
 
-To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume.  It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.  
+To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume. It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.
 
 #### Facebook Prophet Model
+
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
 
 #### LSTM Model
 
 #### Database
-PostgresSQL was used to store and manipulate.  Please see image below. 'code shown below'
+
+PostgresSQL was used to store and manipulate. Please see image below. 'code shown below'
+
 ```
     SQL
         #connect to SQL database
@@ -145,8 +148,9 @@ PostgresSQL was used to store and manipulate.  Please see image below. 'code sho
             rows_imported=0
         # get the start_time from time.time()
             start_time=time.time()
-            print(f'Done.{time.time()-start_time} total secons elapsed')    
+            print(f'Done.{time.time()-start_time} total secons elapsed')
 ```
+
 'include image from "crypto_data_collect/crypto_stock_SA_OCT28.ipynb" SQL code'
 
 ### Tools/Modules to use

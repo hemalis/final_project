@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock and Crypto Prediction</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div>
+                <h1>Deep learning</h1>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="stocks.html" class="active">Stocks</a>
+                        </li>
+                        <li>
+                            <a href="cryptos.html">Cryptos</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="graph" id="AAPL"></div>
+            
+    <main class="dashboard">
+        <div class="panel list">
+            <li>
+                <h2>Stocks</h2>
+                <span>Daily Price</span>
+            </li>
+            <li>
+                <button class="button">AAPL</button>
+                <!-- <h4>AAPL</h4> -->
+                <span>$149.21</span>
+            </li>
+            <li>
+                <button class="button">TSLA</button>
+                <!-- <h4>TSLA</h4> -->
+                <span>$215.86</span>
+            </li>
+            <li>
+                <button class="button">META</button>
+                <!-- <h4>Meta</h4> -->
+                <span>$92.12</span>
+            </li>
+            <li>
+                <button class="button">MSFT</button>
+                <!-- <h4>MSFT</h4> -->
+                <span>$216.49</span>
+            </li>
+            <li>
+                <button class="button">AMZN</button>
+                <!-- <h4>AMZN</h4> -->
+                <span>$104.62</span>
+            </li>
+        </div>
+
+        <div class="Prediction-panel">
+            <div>
+                <h4>Daily Prediction</h4>
+                <h1>$150</h1>
+                <small>Accuracy rate of 81%</small>
+            </div>
+            <div>
+                <h4>Weekly Prediction</h4>
+                <h1>$148</h1>
+                <small>Accuracy rate of 83%</small>
+            </div>
+            <div>
+                <h4>Monthly Prediction</h4>
+                <h1>$138</h1>
+                <small>Accuracy rate of 87%</small>
+            </div>
+            <div>
+                <h4>Yearly Prediction</h4>
+                <h1>$168</h1>
+                <small>Accuracy rate of 87%</small>
+            </div>
+        </div>
+
+        <div class="information">
+            <div class="box-1">
+                <h1>Information</h1>
+                <small>Market Cap</small>
+            </div>
+            <div class="box-2">
+                <h1>Analysis</h1>
+                <small>Daily Volumn</small>
+            </div>
+        </div>
+    </main>
+    <script src="../stock.js"></script>
+</body>
+</html>
