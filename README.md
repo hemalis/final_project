@@ -13,10 +13,10 @@ purchasing cryptos and stocks.
 
 ### Motivation
 
-Since the Pandemic, stock markets and cryptocurrency have shown different 
-patterns. The stock market was constantly up and broke some records, however 
-cryptocurrency's price has drastically fallen. Since crypto and blockchain is the 
-future for the web, we were highly interested in learning about these topics & 
+Since the Pandemic, stock markets and cryptocurrency have shown different
+patterns. The stock market was constantly up and broke some records, however
+cryptocurrency's price has drastically fallen. Since crypto and blockchain is the
+future for the web, we were highly interested in learning about these topics &
 would like to deep dive into it.
 
 ### Questions to answer
@@ -131,7 +131,9 @@ Facebook Prophet is an opensource software released by Facebook’s Core Data Sc
 LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
 
 #### Database
-PostgresSQL was used to store and manipulate.  Please see image below. 'code shown below'
+
+PostgresSQL was used to store and manipulate. Please see image below. 'code shown below'
+
 ```
     SQL
         #connect to SQL database
@@ -145,8 +147,9 @@ PostgresSQL was used to store and manipulate.  Please see image below. 'code sho
             rows_imported=0
         # get the start_time from time.time()
             start_time=time.time()
-            print(f'Done.{time.time()-start_time} total secons elapsed')    
+            print(f'Done.{time.time()-start_time} total secons elapsed')
 ```
+
 'include image from "crypto_data_collect/crypto_stock_SA_OCT28.ipynb" SQL code'
 
 ### Tools/Modules to use
