@@ -61,7 +61,7 @@ var layout = {
   },
   yaxis: {
     autorange: true,
-    range: [86.8700008333, 138.870004167],
+    range: [86.8700008333, 100],
     type: 'linear'
   }
 };
@@ -69,6 +69,12 @@ var layout = {
 Plotly.newPlot('AAPL', data, layout);
 })
 
-function updateChart(option){
-  
-}
+// function updateChart(ticker){
+//   if ticker == "AAPL"{
+//     update_AAPL_chart();
+//   }
+
+// }
+
+// Use d3 to update the value
+// Install d3

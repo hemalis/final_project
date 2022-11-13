@@ -43,27 +43,27 @@
                 <span>Daily Price</span>
             </li>
             <li>
-                <button class="button">AAPL</button>
+                <button class="button" onclick="updateChart('AAPL')">AAPL</button>
                 <!-- <h4>AAPL</h4> -->
                 <span>$149.21</span>
             </li>
             <li>
-                <button class="button">TSLA</button>
+                <button class="button" onclick="updateChart('TSLA')">TSLA</button>
                 <!-- <h4>TSLA</h4> -->
                 <span>$215.86</span>
             </li>
             <li>
-                <button class="button">META</button>
+                <button class="button" onclick="updateChart('META')">META</button>
                 <!-- <h4>Meta</h4> -->
                 <span>$92.12</span>
             </li>
             <li>
-                <button class="button">MSFT</button>
+                <button class="button" onclick="updateChart('MSFT')">MSFT</button>
                 <!-- <h4>MSFT</h4> -->
                 <span>$216.49</span>
             </li>
             <li>
-                <button class="button">AMZN</button>
+                <button class="button" onclick="updateChart('AMZN')">AMZN</button>
                 <!-- <h4>AMZN</h4> -->
                 <span>$104.62</span>
             </li>
@@ -72,7 +72,7 @@
         <div class="Prediction-panel">
             <div>
                 <h4>Daily Prediction</h4>
-                <h1>$150</h1>
+                <h1 id="daily-prediction">$150</h1>
                 <small>Accuracy rate of 81%</small>
             </div>
             <div>
