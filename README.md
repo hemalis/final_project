@@ -24,8 +24,8 @@ Since the Pandemic, stock markets and cryptocurrency have shown different patter
 - Google Docs
 - Zoom Meetings
 
-### Prestation
-https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
+### Presentation
+https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM
 
 ### ERD
 
