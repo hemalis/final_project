@@ -35,33 +35,45 @@ def get_stock_tickers():
     return jsonify(data)
 
 
-@app.route('/stock/<ticker>')
-def send_stock_data(ticker):
+@app.route('/stock/<type>/<ticker>')
+def send_stock_data(type, ticker):
     con = psycopg2.connect(
         "host='cryptodb.cji8qxkmosul.us-east-1.rds.amazonaws.com' dbname='crypto_stock' user='postgres' password='sehbzsehbz'")
     cur = con.cursor()
-    cur.execute(f"""select * from stock_prediction where ticker='{ticker}'""")
-    data = {col for col in cur}
-    cur.close()
-    return jsonify(data)
+    if type == "actual":
+        cur.execute(f"""select * from stocks where ticker='{ticker}'""")
+    elif type == "prediction":
+        cur.execute(
+            f"""select * from stock_prediction where ticker='{ticker}'""")
 
-
-@app.route('/crypto/<ticker>')
-def send_crypto_data(ticker):
-    con = psycopg2.connect(
-        "host='cryptodb.cji8qxkmosul.us-east-1.rds.amazonaws.com' dbname='crypto_stock' user='postgres' password='sehbzsehbz'")
-    cur = con.cursor()
-    cur.execute(f"""select * from crypto_prediction where ticker='{ticker}'""")
-    #data = json.dumps(cur.fetchall(), indent=4, sort_keys=True, default=str)
-    colnames = [desc[0] for desc in cur.description]
-    print(colnames)
+    result = []
     for row in cur.fetchall():
-        # res = {}
-        print(row)
-    # results = cur.fetchall()
-    data = [col for col in cur]
+        res = {}
+        for (i, colnames) in enumerate(cur.description):
+            res[colnames[0]] = row[i]
+        result.append(res)
     cur.close()
-    return jsonify(data)
+    return jsonify(result)
+
+
+@app.route('/crypto/<type>/<ticker>')
+def send_crypto_data(type, ticker):
+    con = psycopg2.connect(
+        "host='cryptodb.cji8qxkmosul.us-east-1.rds.amazonaws.com' dbname='crypto_stock' user='postgres' password='sehbzsehbz'")
+    cur = con.cursor()
+    if type == "actual":
+        cur.execute(f"""select * from cryptos where ticker='{ticker}'""")
+    elif type == "prediction":
+        cur.execute(
+            f"""select * from crypto_prediction where ticker='{ticker}'""")
+    result = []
+    for row in cur.fetchall():
+        res = {}
+        for (i, colnames) in enumerate(cur.description):
+            res[colnames[0]] = row[i]
+        result.append(res)
+    cur.close()
+    return jsonify(result)
 
 
 if __name__ == "__main__":
