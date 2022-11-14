@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
+    color: rgb(234, 234, 234);
     background: #172042;
 }
 
@@ -22,6 +22,7 @@ a {
 p {
     color: #6b6f8a;
     font-size: 0.9em;
+    text-indent: 10px;
 }
 
 small {
@@ -100,19 +101,14 @@ ul {
     padding: 5em;
     display: grid;
     grid-template-columns: 0.2fr 1fr;
-    position:absolute;
-    top: 6em; 
-    width: calc(106.5% - 17em);
-    overflow-x: hidden;
+    padding-top: 200px;
 }
 
 .graph {
     background-color: #17204200;
     padding: 5em;
-    display: grid;
-    justify-content: right;
     position: absolute;
-    top: 4.1em;
+    top: 7em;
     right: 0px;
     width: calc(100% - 30em);
     overflow-x: hidden;
@@ -182,15 +178,6 @@ ul {
 
 /* Information Section */
 
-.box-1{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 200px;
-    height: 100px;
-    padding: 20px;
-    background-color: #02cee1;
-}
-
 .button {
     border: 0;
     font-weight: bold;
@@ -205,4 +192,48 @@ ul {
     border-radius: 20px;
     padding: 10px;
     background-color: #ffffff1e;
+}
+
+.box-1 {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    padding: 10px;
+    background: linear-gradient(
+        180deg, #262a4f, #122422
+    );
+    box-shadow: 
+        -5px -5px 8px #11163c,
+        5px 5px 5px #11163c;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.information {
+    grid-column-start: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    margin: 3em 0;
+}
+
+.information > div {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 1em;
+    background: linear-gradient(
+        180deg, #222646, #122422
+    );
+    box-shadow: 
+        -5px -5px 8px #11163c,
+        5px 5px 5px #11163c;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.information h1 {
+    margin: 0.5em 0;
+}
+
+.information small {
+    color: rgb(174, 174, 174);
 }
