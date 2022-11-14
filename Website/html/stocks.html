@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -44,23 +45,28 @@
             </li>
             <li>
                 <button class="button" onclick="updateChart('AAPL')">AAPL</button>
-                <span>$149.21</span>
+                <span>$149</span>
+                <!-- <h3>$149<span id="bitcoin"></span></h3> -->
             </li>
             <li>
                 <button class="button" onclick="updateChart('TSLA')">TSLA</button>
-                <span>$215.86</span>
+                <span>$198</span>
+                <!-- <h1>$198<span id="ethereum"></span></h1> -->
             </li>
             <li>
                 <button class="button" onclick="updateChart('META')">META</button>
-                <span>$92.12</span>
+                <span>$105</span>
+                <!-- <h1>$105<span id="binance"></span></h1> -->
             </li>
             <li>
                 <button class="button" onclick="updateChart('GOOGL')">Google</button>
-                <span>$216.49</span>
+                <span>$97</span>
+                <!-- <h1>$97<span id="solana"></span></h1> -->
             </li>
             <li>
                 <button class="button" onclick="updateChart('AMZN')">AMZN</button>
-                <span>$104.62</span>
+                <span>$102</span>
+                <!-- <h1>$102<span id="ripple"></span></h1> -->
             </li>
         </div>
 
@@ -89,12 +95,16 @@
 
         <div class="information">
             <div class="box-1">
-                <h1>Information</h1>
-                <small>Market Cap</small>
+                <h1>Statistics</h1>
+                <small>Market Capitalization</small>
+                <small>Trailing PE</small>
+                <small>PEG Ratio</small>
+                <small>ETE</small>
             </div>
             <div class="box-2">
-                <h1>Analysis</h1>
-                <small>Daily Volumn</small>
+                <h1>Financials</h1>
+                <small>Annual Reports</small>
+                <small>Quarter Reports</small>
             </div>
         </div>
     </main>

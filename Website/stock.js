@@ -14,10 +14,34 @@ function updateChart(ticker){
   if(ticker == "AMZN"){
     update_AMZN_chart();
   }
+  // get_daily_price(ticker);
 }
 
+// var btc = document.getElementById("bitcoin");
+// var eth = document.getElementById("ethereum");
+// var bnb = document.getElementById("binance");
+// var sol = document.getElementById("solana");
+// var xrp = document.getElementById("ripple");
+
+// var liveprice = {
+//     "async": true,
+//     "scroosDomain": true,
+//     "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cbinance%2Csolana%2Cripple&vs_currencies=usd",
+
+//     "method": "GET",
+//     "headers": {}
+// }
+
+// $.ajax(liveprice).done(function (response){
+//     btc.innerHTML = response.bitcoin.usd;
+//     eth.innerHTML = response.ethereum.usd;
+//     bnb.innerHTML = response.binance.usd;
+//     sol.innerHTML = response.solana.usd;
+//     xrp.innerHTML = response.ripple.usd;
+// });
+
 // Default ============================================================================================================================
-d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AAPL.csv", function(err, rows){
+d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/AAPL.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -27,8 +51,8 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AAPL.c
       mode: "lines",
       name: "AAPL Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -36,8 +60,8 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AAPL.c
       mode: "lines",
       name: "AAPL Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -90,7 +114,7 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AAPL.c
 
 // AAPL ============================================================================================================================
 function update_AAPL_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AAPL.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/AAPL.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -100,8 +124,8 @@ function update_AAPL_chart(){
       mode: "lines",
       name: "AAPL Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -109,8 +133,8 @@ function update_AAPL_chart(){
       mode: "lines",
       name: "AAPL Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -148,14 +172,14 @@ function update_AAPL_chart(){
           },
           {step: 'all'}
         ]},
-      rangeslider: {range: ['2019-11-07', '2022-11-10']},
+      // rangeslider: {range: ['2019-11-07', '2022-11-10']},
       type: 'date'
-    },
-    yaxis: {
-      autorange: true,
-      range: [86.8700008333, 100],
-      type: 'linear'
-    }
+      },
+      yaxis: {
+        autorange: true,
+        // range: [86.8700008333, 100],
+        type: 'linear'
+      }
   };
 
   Plotly.newPlot('stockChart', data, layout);
@@ -457,3 +481,9 @@ function update_AMZN_chart(){
   Plotly.newPlot('stockChart', data, layout);
   })
 }
+
+// Get daily price
+// function get_daily_price(ticker) {
+  // const url = "https://api.twelvedata.com/price?symbol=" + ticker.toString() + "&apikey=6e1155c7ff724f1daf91647f1664883e";
+  //   console.log(url);
+// }
