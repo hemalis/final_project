@@ -34,7 +34,7 @@
         </div>
     </nav>
     
-    <div class="graph" id="AAPL"></div>
+    <div class="graph" id="cryptoChart"></div>
             
     <main class="dashboard">
         <div class="panel list">
@@ -44,28 +44,23 @@
                 <span>Daily Price</span>
             </li>
             <li>
-                <button class="button">BTC</button>
-                <!-- <h4>Monday</h4> -->
+                <button class="button" onclick="updateChart('BTC')">BTC</button>
                 <span>$20,019</span>
             </li>
             <li>
-                <button class="button">ETH</button>
-                <!-- <h4>Tuesday</h4> -->
+                <button class="button" onclick="updateChart('ETH')">ETH</button>
                 <span>$20,552</span>
             </li>
             <li>
-                <button class="button">ADA</button>
-                <!-- <h4>Wednesday</h4> -->
+                <button class="button" onclick="updateChart('ADA')">ADA</button>
                 <span>$21,862</span>
             </li>
             <li>
-                <button class="button">XRP</button>
-                <!-- <h4>Thursday</h4> -->
+                <button class="button" onclick="updateChart('XRP')">XRP</button>
                 <span>$21,903</span>
             </li>
             <li>
-                <button class="button">BNB</button>
-                <!-- <h4>Friday</h4> -->
+                <button class="button" onclick="updateChart('BNB')">BNB</button>
                 <span>$20,402</span>
             </li>
         </div>
@@ -104,6 +99,6 @@
             </div>
         </div>
     </main>
-    <script src="../stock.js"></script>
+    <script src="../crypto.js"></script>
 </body>
 </html>
