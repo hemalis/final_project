@@ -14,31 +14,7 @@ function updateChart(ticker){
   if(ticker == "AMZN"){
     update_AMZN_chart();
   }
-  // get_daily_price(ticker);
 }
-
-// var btc = document.getElementById("bitcoin");
-// var eth = document.getElementById("ethereum");
-// var bnb = document.getElementById("binance");
-// var sol = document.getElementById("solana");
-// var xrp = document.getElementById("ripple");
-
-// var liveprice = {
-//     "async": true,
-//     "scroosDomain": true,
-//     "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cbinance%2Csolana%2Cripple&vs_currencies=usd",
-
-//     "method": "GET",
-//     "headers": {}
-// }
-
-// $.ajax(liveprice).done(function (response){
-//     btc.innerHTML = response.bitcoin.usd;
-//     eth.innerHTML = response.ethereum.usd;
-//     bnb.innerHTML = response.binance.usd;
-//     sol.innerHTML = response.solana.usd;
-//     xrp.innerHTML = response.ripple.usd;
-// });
 
 // Default ============================================================================================================================
 d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/AAPL.csv", function(err, rows){
@@ -111,6 +87,53 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Websit
 
   Plotly.newPlot('stockChart', data, layout);
   })
+
+// Get Daily Price
+const AAPL_url = 'https://api.twelvedata.com/price?symbol=AAPL&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_AAPL(){
+  const response_AAPL = await fetch(AAPL_url);
+  const data_AAPL = await response_AAPL.json();
+  console.log(data_AAPL.price);
+  document.getElementById('AAPL-daily-price').textContent=data_AAPL.price;
+}
+
+const TSLA_url = 'https://api.twelvedata.com/price?symbol=TSLA&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_TSLA(){
+  const response_TSLA = await fetch(TSLA_url);
+  const data_TSLA = await response_TSLA.json();
+  // console.log(data.price);
+  document.getElementById('TSLA-daily-price').textContent=data_TSLA.price;
+}
+
+const META_url = 'https://api.twelvedata.com/price?symbol=META&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_META(){
+  const response_META = await fetch(META_url);
+  const data_META = await response_META.json();
+  // console.log(data.price);
+  document.getElementById('META-daily-price').textContent=data_META.price;
+}
+
+const GOOGL_url = 'https://api.twelvedata.com/price?symbol=GOOGL&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_GOOGL(){
+  const response_GOOGL = await fetch(GOOGL_url);
+  const data_GOOGL = await response_GOOGL.json();
+  // console.log(data.price);
+  document.getElementById('GOOGL-daily-price').textContent=data_GOOGL.price;
+}
+
+const AMZN_url = 'https://api.twelvedata.com/price?symbol=AMZN&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_AMZN(){
+  const response_AMZN = await fetch(AMZN_url);
+  const data_AMZN = await response_AMZN.json();
+  // console.log(data.price);
+  document.getElementById('AMZN-daily-price').textContent=data_AMZN.price;
+}
+
+getdailyprice_AAPL();
+getdailyprice_TSLA();
+getdailyprice_META();
+getdailyprice_GOOGL();
+getdailyprice_AMZN();
 
 // AAPL ============================================================================================================================
 function update_AAPL_chart(){

@@ -88,7 +88,30 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Websit
   Plotly.newPlot('cryptoChart', data, layout);
   })
 
-// AAPL ============================================================================================================================
+var btc = document.getElementById("BTC");
+var eth = document.getElementById("ETH");
+var sol = document.getElementById("SOL");
+var xrp = document.getElementById("XRP");
+var bnb = document.getElementById("BNB");
+
+var liveprice = {
+  "async": true,
+  "scroosDomain": true,
+  "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Csolana%2Cripple%2Cbinancecoin&vs_currencies=usd",
+  "method": "GET",
+  "headers": {}
+}
+  
+$.ajax(liveprice).done(function (response){
+  btc.innerHTML = response.bitcoin.usd;
+  eth.innerHTML = response.ethereum.usd;
+  sol.innerHTML = response.solana.usd;
+  xrp.innerHTML = response.ripple.usd;
+  bnb.innerHTML = response.binancecoin.usd;
+});
+
+
+// Bitcon ============================================================================================================================
 function update_BTC_chart(){
   d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/BTC.csv", function(err, rows){
     function unpack(rows, key) {
