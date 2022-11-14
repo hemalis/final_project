@@ -122,14 +122,13 @@ ON "Stock_prediction" ("ticker");
 ```
 
 ### Machine Learning Model
-
-To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume. It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.
+To create a linear regression model, we first began by sourcing Bitcoin pricing data from CoinGecko and the stock pricing data from Polygon and Yahoo Finance. This data was collected for daily prices and volume.  It helps identify the relationships between a dependent variable and one or more independent variables. Simple linear regression is defined by using a feature to predict an outcome.  
 
 #### Facebook Prophet Model
-
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
 
 #### LSTM Model
+LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
 
 #### Database
 
@@ -173,3 +172,10 @@ PostgresSQL was used to store and manipulate. Please see image below. 'code show
 - 2 years of historical data
 - CoinGecko: https://www.coingecko.com/
 - Yahoo Finance: https://finance.yahoo.com/
+
+### Website:
+- We will create a website using HTML, JavaScript, and CSS to display our analysis
+  - The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
+  - The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
+  - The third page will be similar to the stock page, except it's for crypto predcition only.
+  - Thie fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
