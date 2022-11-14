@@ -5,8 +5,8 @@ function updateChart(ticker){
   if(ticker == "ETH"){
     update_ETH_chart();
   }
-  if(ticker == "ADA"){
-    update_ADA_chart();
+  if(ticker == "SOL"){
+    update_SOL_chart();
   }
   if(ticker == "XRP"){
     update_XRP_chart();
@@ -17,7 +17,7 @@ function updateChart(ticker){
 }
 
 // Default ============================================================================================================================
-d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BTC.csv", function(err, rows){
+d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/BTC.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -27,7 +27,7 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BTC.cs
       mode: "lines",
       name: "BTC Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
+      y: unpack(rows, "close"),
       line: {color: "#03dcee"},
     };
     
@@ -36,7 +36,7 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BTC.cs
       mode: "lines",
       name: "BTC Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
+      y: unpack(rows, "close_prediction"),
       line: {color: "#ea335d"},
     };
 
@@ -89,8 +89,8 @@ d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BTC.cs
   })
 
 // AAPL ============================================================================================================================
-function update_AAPL_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/AAPL.csv", function(err, rows){
+function update_BTC_chart(){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/BTC.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -98,7 +98,7 @@ function update_AAPL_chart(){
   var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "AAPL Actual",
+      name: "BTC Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "close"),
       line: {color: "#03dcee"},
@@ -107,7 +107,7 @@ function update_AAPL_chart(){
     var trace2 = {
       type: "scatter",
       mode: "lines",
-      name: "AAPL Predict",
+      name: "BTC Predict",
       x: unpack(rows, "date"),
       y: unpack(rows, "close_prediction"),
       line: {color: "#ea335d"},
@@ -129,81 +129,7 @@ function update_AAPL_chart(){
       font: {
           color: "#6b5f8a"
       },
-      title: 'Prediction Graph for Apple',
-      xaxis: {
-      autorange: true,
-      range: ['2019-11-07', '2022-11-10'],
-      rangeselector: {buttons: [
-          {
-            count: 1,
-            label: '1m',
-            step: 'month',
-            stepmode: 'backward'
-          },
-          {
-            count: 6,
-            label: '6m',
-            step: 'month',
-            stepmode: 'backward'
-          },
-          {step: 'all'}
-        ]},
-      // rangeslider: {range: ['2019-11-07', '2022-11-10']},
-      type: 'date'
-      },
-      yaxis: {
-        autorange: true,
-        // range: [86.8700008333, 100],
-        type: 'linear'
-      }
-  };
-
-  Plotly.newPlot('stockChart', data, layout);
-  })
-}
-
-// TSLA ============================================================================================================================
-function update_TSLA_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/TSLA.csv", function(err, rows){
-    function unpack(rows, key) {
-    return rows.map(function(row) { return row[key]; });
-  }
-
-  var trace1 = {
-      type: "scatter",
-      mode: "lines",
-      name: "TSLA Actual",
-      x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
-    };
-    
-    var trace2 = {
-      type: "scatter",
-      mode: "lines",
-      name: "TSLA Predict",
-      x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
-    };
-
-  var data = [trace1,trace2];
-
-  var layout = {
-      paper_bgcolor: "#172042",
-      plot_bgcolor: "#172042",
-      showlegend: true,
-      margin: {
-      l: 30,
-      r: 30,
-      b: 30,
-      t: 30,
-      pad: 1,
-      },
-      font: {
-          color: "#6b5f8a"
-      },
-      title: 'Prediction Graph for Tesla',
+      title: 'Prediction Graph for Bitcoin',
       xaxis: {
       autorange: true,
       range: ['2019-11-07', '2022-11-10'],
@@ -232,13 +158,13 @@ function update_TSLA_chart(){
     }
   };
 
-  Plotly.newPlot('stockChart', data, layout);
+  Plotly.newPlot('cryptoChart', data, layout);
   })
 }
 
-// META ============================================================================================================================
-function update_META_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/META.csv", function(err, rows){
+// ETH ============================================================================================================================
+function update_ETH_chart(){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/ETH.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -246,7 +172,7 @@ function update_META_chart(){
   var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "Meta Actual",
+      name: "ETH Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
       line: {color: "#ea335d"},
@@ -255,7 +181,7 @@ function update_META_chart(){
     var trace2 = {
       type: "scatter",
       mode: "lines",
-      name: "Meta Predict",
+      name: "ETH Predict",
       x: unpack(rows, "date"),
       y: unpack(rows, "close"),
       line: {color: "#03dcee"},
@@ -277,7 +203,7 @@ function update_META_chart(){
       font: {
           color: "#6b5f8a"
       },
-      title: 'Prediction Graph for Meta',
+      title: 'Prediction Graph for ETH',
       xaxis: {
       autorange: true,
       range: ['2019-11-07', '2022-11-10'],
@@ -306,13 +232,87 @@ function update_META_chart(){
     }
   };
 
-  Plotly.newPlot('stockChart', data, layout);
+  Plotly.newPlot('cryptoChart', data, layout);
+  })
+}
+
+// SOL ============================================================================================================================
+function update_SOL_chart(){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/SOL.csv", function(err, rows){
+    function unpack(rows, key) {
+    return rows.map(function(row) { return row[key]; });
+  }
+
+  var trace1 = {
+      type: "scatter",
+      mode: "lines",
+      name: "SOL Actual",
+      x: unpack(rows, "date"),
+      y: unpack(rows, "open"),
+      line: {color: "#ea335d"},
+    };
+    
+    var trace2 = {
+      type: "scatter",
+      mode: "lines",
+      name: "SOL Predict",
+      x: unpack(rows, "date"),
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
+    };
+
+  var data = [trace1,trace2];
+
+  var layout = {
+      paper_bgcolor: "#172042",
+      plot_bgcolor: "#172042",
+      showlegend: true,
+      margin: {
+      l: 30,
+      r: 30,
+      b: 30,
+      t: 30,
+      pad: 1,
+      },
+      font: {
+          color: "#6b5f8a"
+      },
+      title: 'Prediction Graph for SOL',
+      xaxis: {
+      autorange: true,
+      range: ['2019-11-07', '2022-11-10'],
+      rangeselector: {buttons: [
+          {
+            count: 1,
+            label: '1m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {
+            count: 6,
+            label: '6m',
+            step: 'month',
+            stepmode: 'backward'
+          },
+          {step: 'all'}
+        ]},
+      rangeslider: {range: ['2019-11-07', '2022-11-10']},
+      type: 'date'
+    },
+    yaxis: {
+      autorange: true,
+      range: [86.8700008333, 100],
+      type: 'linear'
+    }
+  };
+
+  Plotly.newPlot('cryptoChart', data, layout);
   })
 }
 
 // Google ============================================================================================================================
-function update_GOOGL_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/GOOGL.csv", function(err, rows){
+function update_XRP_chart(){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/XRP.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -320,7 +320,7 @@ function update_GOOGL_chart(){
   var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "Google Actual",
+      name: "XRP Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
       line: {color: "#ea335d"},
@@ -329,7 +329,7 @@ function update_GOOGL_chart(){
     var trace2 = {
       type: "scatter",
       mode: "lines",
-      name: "Google Predict",
+      name: "XRP Predict",
       x: unpack(rows, "date"),
       y: unpack(rows, "close"),
       line: {color: "#03dcee"},
@@ -351,7 +351,7 @@ function update_GOOGL_chart(){
       font: {
           color: "#6b5f8a"
       },
-      title: 'Prediction Graph for Google',
+      title: 'Prediction Graph for XRP',
       xaxis: {
       autorange: true,
       range: ['2019-11-07', '2022-11-10'],
@@ -380,13 +380,13 @@ function update_GOOGL_chart(){
     }
   };
 
-  Plotly.newPlot('stockChart', data, layout);
+  Plotly.newPlot('cryptoChart', data, layout);
   })
 }
 
 // AMZN ============================================================================================================================
-function update_AMZN_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AMZN.csv", function(err, rows){
+function update_BNB_chart(){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BNB.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -394,7 +394,7 @@ function update_AMZN_chart(){
   var trace1 = {
       type: "scatter",
       mode: "lines",
-      name: "Amazon Actual",
+      name: "BNB Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
       line: {color: "#ea335d"},
@@ -403,7 +403,7 @@ function update_AMZN_chart(){
     var trace2 = {
       type: "scatter",
       mode: "lines",
-      name: "Amazon Predict",
+      name: "BNB Predict",
       x: unpack(rows, "date"),
       y: unpack(rows, "close"),
       line: {color: "#03dcee"},
@@ -425,7 +425,7 @@ function update_AMZN_chart(){
       font: {
           color: "#6b5f8a"
       },
-      title: 'Prediction Graph for Amazon',
+      title: 'Prediction Graph for BNB',
       xaxis: {
       autorange: true,
       range: ['2019-11-07', '2022-11-10'],
@@ -454,6 +454,6 @@ function update_AMZN_chart(){
     }
   };
 
-  Plotly.newPlot('stockChart', data, layout);
+  Plotly.newPlot('cryptoChart', data, layout);
   })
 }
