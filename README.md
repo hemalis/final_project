@@ -117,21 +117,26 @@ ON "Stock_prediction" ("ticker");
 
 To create a machine learning model, we first began by sourcing crypto pricing data and stock pricing data from Yahoo Finance. This data was collected for daily prices and volume.  
 
+Please see images below for code.
+![image](https://github.com/hemalis/final_project/blob/main/images/Data%20Collection%201.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%201.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%202.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Stock%20Collection%201.jpg)
 
 
 #### Facebook Prophet Model
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
 
-Please see images below for code.
-![image]
-![image]
-![image]
-![image]
+![image]()
+![image]()
 
 
 #### Facebook Prophet Model Results:
-![image]
-![image]
+![image](https://github.com/hemalis/final_project/blob/main/images/Prophet%20Prediction%20-AAPL.jpg)
+![image](https://github.com/hemalis/final_project/blob/main/images/Prophet%20Prediction%20-BTC.jpg)
 
 
 The advantages of Facebook Prohphet Model are:
