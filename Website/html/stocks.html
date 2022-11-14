@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -34,7 +35,7 @@
         </div>
     </nav>
     
-    <div class="graph" id="AAPL"></div>
+    <div class="graph" id="stockChart"></div>
             
     <main class="dashboard">
         <div class="panel list">
@@ -43,36 +44,36 @@
                 <span>Daily Price</span>
             </li>
             <li>
-                <button class="button">AAPL</button>
-                <!-- <h4>AAPL</h4> -->
-                <span>$149.21</span>
+                <button class="button" onclick="updateChart('AAPL')">AAPL</button>
+                <span>$149</span>
+                <!-- <h3>$149<span id="bitcoin"></span></h3> -->
             </li>
             <li>
-                <button class="button">TSLA</button>
-                <!-- <h4>TSLA</h4> -->
-                <span>$215.86</span>
+                <button class="button" onclick="updateChart('TSLA')">TSLA</button>
+                <span>$198</span>
+                <!-- <h1>$198<span id="ethereum"></span></h1> -->
             </li>
             <li>
-                <button class="button">META</button>
-                <!-- <h4>Meta</h4> -->
-                <span>$92.12</span>
+                <button class="button" onclick="updateChart('META')">META</button>
+                <span>$105</span>
+                <!-- <h1>$105<span id="binance"></span></h1> -->
             </li>
             <li>
-                <button class="button">MSFT</button>
-                <!-- <h4>MSFT</h4> -->
-                <span>$216.49</span>
+                <button class="button" onclick="updateChart('GOOGL')">Google</button>
+                <span>$97</span>
+                <!-- <h1>$97<span id="solana"></span></h1> -->
             </li>
             <li>
-                <button class="button">AMZN</button>
-                <!-- <h4>AMZN</h4> -->
-                <span>$104.62</span>
+                <button class="button" onclick="updateChart('AMZN')">AMZN</button>
+                <span>$102</span>
+                <!-- <h1>$102<span id="ripple"></span></h1> -->
             </li>
         </div>
 
         <div class="Prediction-panel">
             <div>
                 <h4>Daily Prediction</h4>
-                <h1>$150</h1>
+                <h1 id="daily-prediction">$150</h1>
                 <small>Accuracy rate of 81%</small>
             </div>
             <div>
@@ -94,12 +95,16 @@
 
         <div class="information">
             <div class="box-1">
-                <h1>Information</h1>
-                <small>Market Cap</small>
+                <h1>Statistics</h1>
+                <small>Market Capitalization</small>
+                <small>Trailing PE</small>
+                <small>PEG Ratio</small>
+                <small>ETE</small>
             </div>
             <div class="box-2">
-                <h1>Analysis</h1>
-                <small>Daily Volumn</small>
+                <h1>Financials</h1>
+                <small>Annual Reports</small>
+                <small>Quarter Reports</small>
             </div>
         </div>
     </main>
