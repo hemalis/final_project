@@ -11,10 +11,9 @@ Since the Pandemic, stock markets and cryptocurrency have shown different patter
 ### Questions to answer
 
 - Which cryptos/stocks have a higher volume?
-- Select a target cryptos/stocks and predict what is its highest price and
-  lowest price in the day?
+- Select a target cryptos/stocks and predict what is its highest price and lowest price in the day?
 - Which are the best crypto to buy and sell from the list of cryptos?
-- Using pre-market volume to predict the daily volumes
+- Using pre-market volume to predict the daily volumes.
 - Using data to predict stock and crypto using machine learning.
 
 ### Communication Protocol
@@ -24,6 +23,9 @@ Since the Pandemic, stock markets and cryptocurrency have shown different patter
 - Google sheets
 - Google Docs
 - Zoom Meetings
+
+### Prestation
+https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
 
 ### ERD
 
