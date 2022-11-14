@@ -44,7 +44,10 @@ def send_stock_data(type, ticker):
         cur.execute(f"""select * from stocks where ticker='{ticker}'""")
     elif type == "prediction":
         cur.execute(
-            f"""select * from stock_prediction where ticker='{ticker}'""")
+            f"""select pre.date,pre.ticker,pre.lower,pre.upper,pre.close_prediction,st.date as ac_date,st.high,st.low,st.volume,st.close,pre.date from stock_prediction pre
+left join stocks st
+on pre.date=st.date and pre.ticker=st.ticker
+where pre.ticker='{ticker}' order by pre.date""")
 
     result = []
     for row in cur.fetchall():
@@ -65,7 +68,10 @@ def send_crypto_data(type, ticker):
         cur.execute(f"""select * from cryptos where ticker='{ticker}'""")
     elif type == "prediction":
         cur.execute(
-            f"""select * from crypto_prediction where ticker='{ticker}'""")
+            f"""select pre.date,pre.ticker,pre.lower,pre.upper,pre.close_prediction,st.high,st.low,st.volume,st.close,pre.date from crypto_prediction pre
+left join cryptos st
+on pre.date=st.date and pre.ticker=st.ticker
+where pre.ticker='{ticker}' order by pre.date""")
     result = []
     for row in cur.fetchall():
         res = {}
