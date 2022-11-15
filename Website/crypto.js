@@ -187,7 +187,7 @@ function update_BTC_chart(){
 
 // ETH ============================================================================================================================
 function update_ETH_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/ETH.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/ETH.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -197,8 +197,8 @@ function update_ETH_chart(){
       mode: "lines",
       name: "ETH Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -206,8 +206,8 @@ function update_ETH_chart(){
       mode: "lines",
       name: "ETH Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -261,7 +261,7 @@ function update_ETH_chart(){
 
 // SOL ============================================================================================================================
 function update_SOL_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/SOL.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/SOL.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -271,8 +271,8 @@ function update_SOL_chart(){
       mode: "lines",
       name: "SOL Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -280,8 +280,8 @@ function update_SOL_chart(){
       mode: "lines",
       name: "SOL Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -335,7 +335,7 @@ function update_SOL_chart(){
 
 // Google ============================================================================================================================
 function update_XRP_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/XRP.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/XRP.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -345,8 +345,8 @@ function update_XRP_chart(){
       mode: "lines",
       name: "XRP Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -354,8 +354,8 @@ function update_XRP_chart(){
       mode: "lines",
       name: "XRP Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediciton"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -409,7 +409,7 @@ function update_XRP_chart(){
 
 // AMZN ============================================================================================================================
 function update_BNB_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/BNB.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/BNB.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -419,8 +419,8 @@ function update_BNB_chart(){
       mode: "lines",
       name: "BNB Actual",
       x: unpack(rows, "date"),
-      y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      y: unpack(rows, "close"),
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -428,8 +428,8 @@ function update_BNB_chart(){
       mode: "lines",
       name: "BNB Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];

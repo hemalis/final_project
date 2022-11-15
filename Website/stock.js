@@ -211,7 +211,7 @@ function update_AAPL_chart(){
 
 // TSLA ============================================================================================================================
 function update_TSLA_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/TSLA.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/TSLA.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -222,7 +222,7 @@ function update_TSLA_chart(){
       name: "TSLA Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -230,8 +230,8 @@ function update_TSLA_chart(){
       mode: "lines",
       name: "TSLA Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -285,7 +285,7 @@ function update_TSLA_chart(){
 
 // META ============================================================================================================================
 function update_META_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/META.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/META.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -296,7 +296,7 @@ function update_META_chart(){
       name: "Meta Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -304,8 +304,8 @@ function update_META_chart(){
       mode: "lines",
       name: "Meta Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -359,7 +359,7 @@ function update_META_chart(){
 
 // Google ============================================================================================================================
 function update_GOOGL_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/GOOGL.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/META.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -370,7 +370,7 @@ function update_GOOGL_chart(){
       name: "Google Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -378,8 +378,8 @@ function update_GOOGL_chart(){
       mode: "lines",
       name: "Google Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
@@ -433,7 +433,7 @@ function update_GOOGL_chart(){
 
 // AMZN ============================================================================================================================
 function update_AMZN_chart(){
-  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/main/data/AMZN.csv", function(err, rows){
+  d3.csv("https://raw.githubusercontent.com/hemalis/final_project/taiqin_wu/Website/data/Data/AMZN.csv", function(err, rows){
     function unpack(rows, key) {
     return rows.map(function(row) { return row[key]; });
   }
@@ -444,7 +444,7 @@ function update_AMZN_chart(){
       name: "Amazon Actual",
       x: unpack(rows, "date"),
       y: unpack(rows, "open"),
-      line: {color: "#ea335d"},
+      line: {color: "#03dcee"},
     };
     
     var trace2 = {
@@ -452,8 +452,8 @@ function update_AMZN_chart(){
       mode: "lines",
       name: "Amazon Predict",
       x: unpack(rows, "date"),
-      y: unpack(rows, "close"),
-      line: {color: "#03dcee"},
+      y: unpack(rows, "close_prediction"),
+      line: {color: "#ea335d"},
     };
 
   var data = [trace1,trace2];
