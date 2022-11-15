@@ -9,7 +9,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
-<body>
+<body onload="updateChart('BTC')">
     <nav class="navbar">
         <div class="container">
             <div>
@@ -68,24 +68,24 @@
         <div class="Prediction-panel">
             <div>
                 <h4>Daily Prediction</h4>
-                <h1>$20,102</h1>
-                <small>Accuracy rate of 85%</small>
+                <h1 id="daily-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
                 <h4>Weekly Prediction</h4>
-                <h1>$21,942</h1>
-                <small>Accuracy rate of 88%</small>
+                <h1 id="weekly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
                 <h4>Monthly Prediction</h4>
-                <h1>$22,109</h1>
-                <small>Accuracy rate of 79%</small>
+                <h1 id="monthly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 79%</small> -->
             </div>
-            <div>
+            <!-- <div>
                 <h4>Yearly Prediction</h4>
                 <h1>$40,294</h1>
                 <small>Accuracy rate of 81%</small>
-            </div>
+            </div> -->
         </div>
             
         <div class="information">
