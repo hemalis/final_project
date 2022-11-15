@@ -64,7 +64,9 @@ CREATE TABLE "Crypto_prediction" (
     "ID" int   NOT NULL,
     "date" datetime   NOT NULL,
     "ticker" string   NOT NULL,
-    "prediction_close" int   NOT NULL,
+    "close_prediction" int   NOT NULL,
+    "lower" float   NOT NULL,
+    "upper" float   NOT NULL,
     CONSTRAINT "pk_Crypto_prediction" PRIMARY KEY (
         "ID"
      )
@@ -74,17 +76,19 @@ CREATE TABLE "Stock_prediction" (
     "ID" int   NOT NULL,
     "date" datetime   NOT NULL,
     "ticker" string   NOT NULL,
-    "prediction_close" int   NOT NULL,
+    "close_prediction" int   NOT NULL,
+    "lower" float   NOT NULL,
+    "upper" float   NOT NULL,
     CONSTRAINT "pk_Stock_prediction" PRIMARY KEY (
         "ID"
      )
 );
 
-ALTER TABLE "Crypto" ADD CONSTRAINT "fk_Crypto_ticker" FOREIGN KEY("ticker")
-REFERENCES "Crypto_prediction" ("ticker");
+ALTER TABLE "Crypto" ADD CONSTRAINT "fk_Crypto_date_ticker" FOREIGN KEY("date", "ticker")
+REFERENCES "Crypto_prediction" ("date", "ticker");
 
-ALTER TABLE "Stock" ADD CONSTRAINT "fk_Stock_ticker" FOREIGN KEY("ticker")
-REFERENCES "Stock_prediction" ("ticker");
+ALTER TABLE "Stock" ADD CONSTRAINT "fk_Stock_date_ticker" FOREIGN KEY("date", "ticker")
+REFERENCES "Stock_prediction" ("date", "ticker");
 
 CREATE INDEX "idx_Crypto_date"
 ON "Crypto" ("date");
