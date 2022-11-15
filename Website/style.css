@@ -145,7 +145,7 @@ ul {
 .Prediction-panel {
     grid-column-start: span 3;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
     margin: 3em 0;
 }

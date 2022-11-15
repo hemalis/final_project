@@ -1,6 +1,9 @@
 function updateChart(ticker) {
   console.log("Called")
   d3.json(`http://127.0.0.1:5000/crypto/prediction/${ticker}`,function(err, rows){
+    var selection = d3.select("#daily-prediction");
+    selection.html(`$${Math.round(rows[rows.length-1].close_prediction).toLocaleString()}`)
+
     function unpack(rows, key) {
     return rows.map(function(row) { 
       // console.log(row[key])
@@ -30,7 +33,7 @@ function updateChart(ticker) {
       x: unpack(rows, "date").map(x => new Date(x).toISOString().slice(0, 10)), 
       y: unpack(rows, "lower"), 
       fill: "tonexty", 
-      fillcolor: "rgba(68, 68, 68, 0.3)", 
+      //fillcolor: "rgba(68, 68, 68, 0.3)", 
       line: {color: "transparent"}, 
       //marker: "#444",
       name: "Lower", 
@@ -43,7 +46,7 @@ function updateChart(ticker) {
       y: unpack(rows, "upper"), 
       fill: "tonexty", 
       //marker: "#444",
-      fillcolor: "rgba(68, 68, 68, 0.3)", 
+      fillcolor: "rgba(111, 231, 219, 0.3)", 
       line: {color: "transparent"}, 
       name: "Upper", 
       showlegend: false, 
@@ -94,6 +97,16 @@ function updateChart(ticker) {
         type: 'linear'
       }
   };
+
+  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/weekly`,function(err, rows){
+    var selection = d3.select("#weekly-prediction");
+    selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
+  });
+
+  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/monthly`,function(err, rows){
+    var selection = d3.select("#monthly-prediction");
+    selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
+  });
 
   Plotly.newPlot('cryptoChart', data, layout);
   });

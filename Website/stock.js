@@ -44,8 +44,11 @@
 
 
 function updateChart(ticker) {
-  console.log("Called")
+  console.log("Called");
   d3.json(`http://127.0.0.1:5000/stock/prediction/${ticker}`,function(err, rows){
+    var selection = d3.select("#daily-prediction");
+    selection.html(`$${Math.round(rows[rows.length-1].close_prediction).toLocaleString()}`)
+
     function unpack(rows, key) {
     return rows.map(function(row) { 
       // console.log(row[key])
@@ -142,6 +145,16 @@ function updateChart(ticker) {
         type: 'linear'
       }
   };
+
+  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/weekly`,function(err, rows){
+    var selection = d3.select("#weekly-prediction");
+    selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
+  });
+
+  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/monthly`,function(err, rows){
+    var selection = d3.select("#monthly-prediction");
+    selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
+  });
 
   Plotly.newPlot('stockChart', data, layout);
   });
