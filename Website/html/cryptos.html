@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body onload="updateChart('BTC')">
     <nav class="navbar">
         <div class="container">
             <div>
@@ -40,8 +40,7 @@
     <main class="dashboard">
         <div class="panel list">
             <li>
-                <button class="button">Cryptos</button>
-                <!-- <h2>BTC</h2> -->
+                <h2>Cryptos</h2>
                 <span>Daily Price</span>
             </li>
             <li>
@@ -68,19 +67,19 @@
 
         <div class="Prediction-panel">
             <div>
-                <h4>Daily Prediction</h4>
-                <h1>$20,102</h1>
-                <small>Accuracy rate of 85%</small>
+                <h4>Next Day Prediction</h4>
+                <h1 id="daily-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
-                <h4>Weekly Prediction</h4>
-                <h1>$21,942</h1>
-                <small>Accuracy rate of 88%</small>
+                <h4>Next Week Prediction</h4>
+                <h1 id="weekly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
-                <h4>Monthly Prediction</h4>
-                <h1>$22,109</h1>
-                <small>Accuracy rate of 79%</small>
+                <h4>Next Month Prediction</h4>
+                <h1 id="monthly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 79%</small> -->
             </div>
             <!-- <div>
                 <h4>Yearly Prediction</h4>
@@ -89,7 +88,7 @@
             </div> -->
         </div>
             
-        <div class="information">
+        <!-- <div class="information">
             <div class="box-1">
                 <h1>Information</h1>
                 <small>Market Cap</small>
@@ -98,8 +97,8 @@
                 <h1>Analysis</h1>
                 <small>Daily Volumn</small>
             </div>
-        </div>
+        </div> -->
     </main>
-    <script src="../crypto.js"></script>
+    <script src="../js/crypto.js"></script>
 </body>
 </html>

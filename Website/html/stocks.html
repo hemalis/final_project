@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body onload="updateChart('AAPL')">
     <nav class="navbar">
         <div class="container">
             <div>
@@ -67,16 +67,19 @@
 
         <div class="Prediction-panel">
             <div>
-                <h4>Daily Prediction</h4>
-                <h1 id="daily-prediction">$150</h1>
+                <h4>Next Day Prediction</h4>
+                <h1 id="daily-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
-                <h4>Weekly Prediction</h4>
-                <h1>$148</h1>
+                <h4>Next Week Prediction</h4>
+                <h1 id="weekly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
-                <h4>Monthly Prediction</h4>
-                <h1>$138</h1>
+                <h4>Next Month Prediction</h4>
+                <h1 id="monthly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 79%</small> -->
             </div>
             <!-- <div>
                 <h4>Yearly Prediction</h4>
@@ -85,7 +88,7 @@
             </div> -->
         </div>
 
-        <div class="information">
+        <!-- <div class="information">
             <div class="box-1">
                 <h1>Statistics</h1>
                 <small>Market Capitalization</small>
@@ -98,8 +101,8 @@
                 <small>Annual Reports</small>
                 <small>Quarter Reports</small>
             </div>
-        </div>
+        </div> -->
     </main>
-    <script src="../stock.js"></script>
+    <script src="../js/stock.js"></script>
 </body>
 </html>
