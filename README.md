@@ -29,7 +29,7 @@ https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc
 
 ### ERD
 
-![image](https://github.com/hemalis/final_project/blob/main/images/ERD_Full.png?raw=true)
+![image](https://github.com/hemalis/final_project/blob/main/images/ERD_IMAGE.png?raw=true)
 
 ```
 CREATE TABLE "Crypto" (
