@@ -59,7 +59,7 @@ function updateChart(ticker) {
     });
   }
 
-  var trace1 = {
+    var trace1 = {
       type: "scatter",
       mode: "lines",
       name: `${ticker}`,

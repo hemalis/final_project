@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="../css/style_home.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <style>
+    <!-- <style>
         .graph {
             width: 800px;
             height: 600px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <nav class="navbar">
@@ -46,7 +46,7 @@
                 <div class="title">
                     <h1>Index</h1>
                 </div>
-                <form action="https://www.google.com/finance/" method="get" class="search-box">
+                <form action="https://www.google.com/finance/" method="get" class="search-box" target="_blank">
                     <input type="text" placeholder="AAPL">
                     <button type="submit"><img src="../images/search.png"></button>
                 </form>
@@ -54,6 +54,8 @@
         </div>
         <div class="graph" id="stockChart"></div>
     </div>
+
+    
     <!-- <script src="../js/stock.js"></script> -->
 </body>
 </html>
