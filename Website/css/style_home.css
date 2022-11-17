@@ -11,7 +11,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 a {
@@ -19,10 +19,10 @@ a {
     color: rgb(255, 255, 255);
 }
 
-p {
+/* p {
     color: #6b6f8a;
     font-size: 0.9em;
-}
+} */
 
 small {
     color: #6b6f8a;
@@ -101,7 +101,7 @@ ul {
 }
 
 .title {
-    font-size: 48px;
+    font-size: 40px;
     padding-top: 50px;
     padding-bottom: 35px;
     display: flex;
@@ -179,10 +179,19 @@ table th {
     padding-bottom: 20px;
     padding-right: 100px;
     text-align: left;
-    background-color: #171b25bd;
+    background-color: #181e29d1;
     color: rgb(255, 255, 255);
     border-collapse: collapse;
 } 
+
+.portexe-search-input {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    text-align: left;
+    /* color: rgb(255, 255, 255); */
+    border-collapse: collapse;
+}
   
 input {
     font-size: 30px;
