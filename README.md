@@ -1,4 +1,4 @@
-# Stock & Crypto Analytics
+# Stock & Crypto Prediction
 
 ### Background
 
@@ -6,28 +6,54 @@ We are building a website to predict the future price of crypto and the stock ma
 
 ### Motivation
 
-Since the Pandemic, stock markets and cryptocurrency have shown different patterns. The stock market was constantly up and broke some records, however cryptocurrency's price has drastically fallen. Since crypto and blockchain is the future for the web, we were highly interested in learning about these topics & would like to deep dive into it.
+Since the Pandemic, the stock market and crypto have shown different patterns. The stock market was consistentlu up and broke some records, however cryptocurrency prices have drastically fallen. Since crypto and blockchain is the future for the web, we were highly interested in learning about these topics & would like to deep dive into it.
 
 ### Questions to answer
+- Select five cryptos/stocks and predict what is its highest price and lowest price in the day.
+- Using data to predict stock and crypto prices using machine learning.
 
-- Which cryptos/stocks have a higher volume?
-- Select a target cryptos/stocks and predict what is its highest price and lowest price in the day?
-- Which are the best crypto to buy and sell from the list of cryptos?
-- Using pre-market volume to predict the daily volumes.
-- Using data to predict stock and crypto using machine learning.
+### Presentation
+https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
 
-### Communication Protocol
+### Data Collection
+* Data Source: API Yahoo Finance
 
-- Slack
-- Google Drive
-- Google sheets
-- Google Docs
-- Zoom Meetings
+We first began by sourcing crypto pricing data and stock pricing data from an API call from Yahoo Finance. This data was collected for daily prices and volume.  
 
+Please see images below for code.
+![image](https://github.com/hemalis/final_project/blob/main/images/Data%20Collection%201.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%201.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%202.jpg)
+
+![image](https://github.com/hemalis/final_project/blob/main/images/Stock%20Collection%201.jpg)
+
+### Database
+
+PostgresSQL was used to store and manipulate. Please see image below. 'code shown below'
+
+```
+    SQL
+        #connect to SQL database
+            db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/crypto_stock"
+            engine = create_engine(db_string)
+        # Import the stock Data
+            stock.to_sql(name='stock', con=engine, if_exists='replace')
+        # Import the stock Data
+            crypto.to_sql(name='crypto', con=engine, if_exists='replace')
+        # create a variable for the number of rows imported
+            rows_imported=0
+        # get the start_time from time.time()
+            start_time=time.time()
+            print(f'Done.{time.time()-start_time} total secons elapsed')
+```
 ### Presentation
 https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM
 
-### ERD
+![image](https://github.com/hemalis/final_project/blob/main/images/Database%20connection.jpg)
+
+#### ERD
 
 ![image](https://github.com/hemalis/final_project/blob/main/images/ERD_IMAGE.png?raw=true)
 
@@ -117,19 +143,6 @@ ON "Stock_prediction" ("ticker");
 ```
 
 ### Machine Learning Model
-* Data Source: API Yahoo Finance
-
-To create a machine learning model, we first began by sourcing crypto pricing data and stock pricing data from Yahoo Finance. This data was collected for daily prices and volume.  
-
-Please see images below for code.
-![image](https://github.com/hemalis/final_project/blob/main/images/Data%20Collection%201.jpg)
-
-![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%201.jpg)
-
-![image](https://github.com/hemalis/final_project/blob/main/images/Crypto%20Collection%202.jpg)
-
-![image](https://github.com/hemalis/final_project/blob/main/images/Stock%20Collection%201.jpg)
-
 
 #### Facebook Prophet Model
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
@@ -147,51 +160,41 @@ The advantages of Facebook Prohphet Model are:
 
 * It is fast and accurate compared to most of its peers.
 * The Prophet model is preferred over other models when you are working with a non-linear module of data and the observations taken to change over seasons like yearly, monthly, weekly, or daily.
-*  Prophet model is robust to missing values and outliers and knows how to deal with the holiday effects.
+* Prophet model is robust to missing values and outliers and knows how to deal with the holiday effects.
 
 The disadvantages of Facebook Prohphet Model include:
 
-*  Prophet can mistakenly believe there are a weekly seasonal component.
+* Prophet can mistakenly believe there are a weekly seasonal component.
 * Does not compare it to a benchmark.
 
 #### LSTM Model
 LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
 
+[image]()
+[image]()
+[image]()
+[image]()
+[image]()
+
+
+#### LSTM Model Results:
+
+[image]()
+[image]()
+
+
 The advantages of LSTM Model are:
 
-* 
-* 
-*  
-* 
+* Most powerful approach to learning from sequential data and time series are only a special case.
+* Does not rely on specific assumptions about the data such as time series stationarity or the existence of a Date field.
 
 The disadvantages of LSTM Model include:
 
-*  
-* 
+* LSTM has no memory associated with the model. Which is a problem for sequential data, like text or time series.
+* LSTMs take longer to train
+* LSTMs require more memory to train
 
-#### Database
-
-PostgresSQL was used to store and manipulate. Please see image below. 'code shown below'
-
-```
-    SQL
-        #connect to SQL database
-            db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/crypto_stock"
-            engine = create_engine(db_string)
-        # Import the stock Data
-            stock.to_sql(name='stock', con=engine, if_exists='replace')
-        # Import the stock Data
-            crypto.to_sql(name='crypto', con=engine, if_exists='replace')
-        # create a variable for the number of rows imported
-            rows_imported=0
-        # get the start_time from time.time()
-            start_time=time.time()
-            print(f'Done.{time.time()-start_time} total secons elapsed')
-```
-
-![image](https://github.com/hemalis/final_project/blob/main/images/Database%20connection.jpg)
-
-## Dashboard/Website
+### Dashboard/Website
 * We will create a website using HTML, JavaScript, and CSS to display our analysis
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
     * The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
@@ -199,15 +202,3 @@ PostgresSQL was used to store and manipulate. Please see image below. 'code show
     * The fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
 ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
 ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
-
-### Datasets
-- 5 API call/mins
-- 2 years of historical data
-- Yahoo Finance: https://finance.yahoo.com/
-
-### Website:
-- We will create a website using HTML, JavaScript, and CSS to display our analysis
-  - The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
-  - The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
-  - The third page will be similar to the stock page, except it's for crypto predcition only.
-  - Thie fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
