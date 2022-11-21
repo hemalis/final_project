@@ -48,12 +48,14 @@ PostgresSQL was used to store and manipulate. Please see image below. 'code show
             start_time=time.time()
             print(f'Done.{time.time()-start_time} total secons elapsed')
 ```
+### Presentation
+https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM
 
 ![image](https://github.com/hemalis/final_project/blob/main/images/Database%20connection.jpg)
 
 #### ERD
 
-![image](https://github.com/hemalis/final_project/blob/main/images/ERD_Full.png?raw=true)
+![image](https://github.com/hemalis/final_project/blob/main/images/ERD_IMAGE.png?raw=true)
 
 ```
 CREATE TABLE "Crypto" (
@@ -88,7 +90,9 @@ CREATE TABLE "Crypto_prediction" (
     "ID" int   NOT NULL,
     "date" datetime   NOT NULL,
     "ticker" string   NOT NULL,
-    "prediction_close" int   NOT NULL,
+    "close_prediction" int   NOT NULL,
+    "lower" float   NOT NULL,
+    "upper" float   NOT NULL,
     CONSTRAINT "pk_Crypto_prediction" PRIMARY KEY (
         "ID"
      )
@@ -98,17 +102,19 @@ CREATE TABLE "Stock_prediction" (
     "ID" int   NOT NULL,
     "date" datetime   NOT NULL,
     "ticker" string   NOT NULL,
-    "prediction_close" int   NOT NULL,
+    "close_prediction" int   NOT NULL,
+    "lower" float   NOT NULL,
+    "upper" float   NOT NULL,
     CONSTRAINT "pk_Stock_prediction" PRIMARY KEY (
         "ID"
      )
 );
 
-ALTER TABLE "Crypto" ADD CONSTRAINT "fk_Crypto_ticker" FOREIGN KEY("ticker")
-REFERENCES "Crypto_prediction" ("ticker");
+ALTER TABLE "Crypto" ADD CONSTRAINT "fk_Crypto_date_ticker" FOREIGN KEY("date", "ticker")
+REFERENCES "Crypto_prediction" ("date", "ticker");
 
-ALTER TABLE "Stock" ADD CONSTRAINT "fk_Stock_ticker" FOREIGN KEY("ticker")
-REFERENCES "Stock_prediction" ("ticker");
+ALTER TABLE "Stock" ADD CONSTRAINT "fk_Stock_date_ticker" FOREIGN KEY("date", "ticker")
+REFERENCES "Stock_prediction" ("date", "ticker");
 
 CREATE INDEX "idx_Crypto_date"
 ON "Crypto" ("date");

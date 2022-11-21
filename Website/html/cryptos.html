@@ -9,7 +9,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
-<body>
+<body onload="updateChart('BTC')">
     <nav class="navbar">
         <div class="container">
             <div>
@@ -34,7 +34,7 @@
         </div>
     </nav>
     
-    <div class="graph" id="AAPL"></div>
+    <div class="graph" id="cryptoChart"></div>
             
     <main class="dashboard">
         <div class="panel list">
@@ -44,64 +44,61 @@
                 <span>Daily Price</span>
             </li>
             <li>
-                <button class="button">BTC</button>
-                <!-- <h4>Monday</h4> -->
-                <span>$20,019</span>
+                <button class="button" onclick="updateChart('BTC')">BTC</button>
+                <span>$16,018.80</span>
             </li>
             <li>
-                <button class="button">ETH</button>
-                <!-- <h4>Tuesday</h4> -->
-                <span>$20,552</span>
+                <button class="button" onclick="updateChart('ETH')">ETH</button>
+                <span>$1,183.59</span>
             </li>
             <li>
-                <button class="button">ADA</button>
-                <!-- <h4>Wednesday</h4> -->
-                <span>$21,862</span>
+                <button class="button" onclick="updateChart('SOL')">ADA</button>
+                <span>$12.59</span>
             </li>
             <li>
-                <button class="button">XRP</button>
-                <!-- <h4>Thursday</h4> -->
-                <span>$21,903</span>
+                <button class="button" onclick="updateChart('XRP')">XRP</button>
+                <span>$0.34</span>
             </li>
             <li>
-                <button class="button">BNB</button>
-                <!-- <h4>Friday</h4> -->
-                <span>$20,402</span>
+                <button class="button" onclick="updateChart('BNB')">BNB</button>
+                <span>$271.10</span>
             </li>
         </div>
 
         <div class="Prediction-panel">
             <div>
                 <h4>Daily Prediction</h4>
-                <h1>$20,102</h1>
-                <small>Accuracy rate of 85%</small>
+                <h1 id="daily-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
                 <h4>Weekly Prediction</h4>
-                <h1>$21,942</h1>
-                <small>Accuracy rate of 88%</small>
+                <h1 id="weekly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
                 <h4>Monthly Prediction</h4>
-                <h1>$22,109</h1>
-                <small>Accuracy rate of 79%</small>
+                <h1 id="monthly-prediction">$0</h1>
+                <!-- <small>Accuracy rate of 79%</small> -->
             </div>
-            <div>
+            <!-- <div>
                 <h4>Yearly Prediction</h4>
                 <h1>$40,294</h1>
                 <small>Accuracy rate of 81%</small>
+            </div> -->
+        </div>
+            
+        <div class="information">
+            <div class="box-1">
+                <h1>Information</h1>
+                <small>Market Cap</small>
+            </div>
+            <div class="box-2">
+                <h1>Analysis</h1>
+                <small>Daily Volumn</small>
             </div>
         </div>
-
-        <div class="panel text text-vertical">
-            <h1>Information</h1>
-            <small>Market Cap</small>
-        </div>
-        <div class="panel text text-vertical">
-            <h1>Analysis</h1>
-            <small></small>
-        </div>
     </main>
-    <script src="../stock.js"></script>
+    <script src="../crypto.js"></script>
 </body>
 </html>
