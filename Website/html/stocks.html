@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -14,7 +14,7 @@
     <nav class="navbar">
         <div class="container">
             <div>
-                <h1>Deep learning</h1>
+                <h1>Deep Learning</h1>
                 <div class="menu">
                     <ul>
                         <li>
@@ -45,46 +45,41 @@
             </li>
             <li>
                 <button class="button" onclick="updateChart('AAPL')">AAPL</button>
-                <span>$149</span>
-                <!-- <h3>$149<span id="bitcoin"></span></h3> -->
+                <span>$<span id="AAPL-daily-price"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('TSLA')">TSLA</button>
-                <span>$198</span>
-                <!-- <h1>$198<span id="ethereum"></span></h1> -->
+                <span>$<span id="TSLA-daily-price"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('META')">META</button>
-                <span>$105</span>
-                <!-- <h1>$105<span id="binance"></span></h1> -->
+                <span>$<span id="META-daily-price"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('GOOG')">Google</button>
-                <span>$97</span>
-                <!-- <h1>$97<span id="solana"></span></h1> -->
+                <span>$<span id="GOOGL-daily-price"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('AMZN')">AMZN</button>
-                <span>$102</span>
-                <!-- <h1>$102<span id="ripple"></span></h1> -->
+                <span>$<span id="AMZN-daily-price"></span></span>
             </li>
         </div>
 
         <div class="Prediction-panel">
             <div>
-                <h4>Daily Prediction</h4>
+                <h4>Next Day Prediction</h4>
                 <h1 id="daily-prediction">$0</h1>
-                <!-- <small>Accuracy rate of 81%</small> -->
+                <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
-                <h4>Weekly Prediction</h4>
+                <h4>Next Week Prediction</h4>
                 <h1 id="weekly-prediction">$0</h1>
-                <!-- <small>Accuracy rate of 83%</small> -->
+                <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
-                <h4>Monthly Prediction</h4>
+                <h4>Next Month Prediction</h4>
                 <h1 id="monthly-prediction">$0</h1>
-                <!-- <small>Accuracy rate of 87%</small> -->
+                <!-- <small>Accuracy rate of 79%</small> -->
             </div>
             <!-- <div>
                 <h4>Yearly Prediction</h4>
@@ -93,7 +88,7 @@
             </div> -->
         </div>
 
-        <div class="information">
+        <!-- <div class="information">
             <div class="box-1">
                 <h1>Statistics</h1>
                 <small>Market Capitalization</small>
@@ -106,8 +101,8 @@
                 <small>Annual Reports</small>
                 <small>Quarter Reports</small>
             </div>
-        </div>
+        </div> -->
     </main>
-    <script src="../stock.js"></script>
+    <script src="../js/stock.js"></script>
 </body>
 </html>

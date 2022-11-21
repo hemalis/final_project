@@ -1,6 +1,54 @@
+// Get Daily Price
+const AAPL_url = 'https://api.twelvedata.com/price?symbol=AAPL&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_AAPL(){
+  const response_AAPL = await fetch(AAPL_url);
+  const data_AAPL = await response_AAPL.json();
+  console.log(data_AAPL.price);
+  document.getElementById('AAPL-daily-price').textContent=data_AAPL.price;
+}
+
+const TSLA_url = 'https://api.twelvedata.com/price?symbol=TSLA&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_TSLA(){
+  const response_TSLA = await fetch(TSLA_url);
+  const data_TSLA = await response_TSLA.json();
+  // console.log(data.price);
+  document.getElementById('TSLA-daily-price').textContent=data_TSLA.price;
+}
+
+const META_url = 'https://api.twelvedata.com/price?symbol=META&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_META(){
+  const response_META = await fetch(META_url);
+  const data_META = await response_META.json();
+  // console.log(data.price);
+  document.getElementById('META-daily-price').textContent=data_META.price;
+}
+
+const GOOGL_url = 'https://api.twelvedata.com/price?symbol=GOOGL&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_GOOGL(){
+  const response_GOOGL = await fetch(GOOGL_url);
+  const data_GOOGL = await response_GOOGL.json();
+  // console.log(data.price);
+  document.getElementById('GOOGL-daily-price').textContent=data_GOOGL.price;
+}
+
+const AMZN_url = 'https://api.twelvedata.com/price?symbol=AMZN&apikey=72d1836457504b678dca9c82302f0d1e';
+async function getdailyprice_AMZN(){
+  const response_AMZN = await fetch(AMZN_url);
+  const data_AMZN = await response_AMZN.json();
+  // console.log(data.price);
+  document.getElementById('AMZN-daily-price').textContent=data_AMZN.price;
+}
+
+getdailyprice_AAPL();
+getdailyprice_TSLA();
+getdailyprice_META();
+getdailyprice_GOOGL();
+getdailyprice_AMZN();
+
+// Chart ============================================================================================================================
 function updateChart(ticker) {
-  console.log("Called")
-  d3.json(`http://127.0.0.1:5000/crypto/prediction/${ticker}`,function(err, rows){
+  console.log("Called");
+  d3.json(`http://127.0.0.1:5000/stock/prediction/${ticker}`,function(err, rows){
     var selection = d3.select("#daily-prediction");
     selection.html(`$${Math.round(rows[rows.length-1].close_prediction).toLocaleString()}`)
 
@@ -11,7 +59,7 @@ function updateChart(ticker) {
     });
   }
 
-  var trace1 = {
+    var trace1 = {
       type: "scatter",
       mode: "lines",
       name: `${ticker}`,
@@ -24,7 +72,10 @@ function updateChart(ticker) {
       type: "scatter",
       mode: "lines",
       name: `${ticker} Predict`,
-      x: unpack(rows, "date").map(x => new Date(x).toISOString().slice(0, 10)),
+      x: unpack(rows, "date").map(x => { 
+        console.log(new Date(x).toISOString().slice(0, 10));
+        return new Date(x).toISOString().slice(0, 10); 
+      }),
       y: unpack(rows, "close_prediction"),
       line: {color: "#ea335d"},
     };
@@ -98,16 +149,16 @@ function updateChart(ticker) {
       }
   };
 
-  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/weekly`,function(err, rows){
+  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/weekly`,function(err, rows){
     var selection = d3.select("#weekly-prediction");
     selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
   });
 
-  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/monthly`,function(err, rows){
+  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/monthly`,function(err, rows){
     var selection = d3.select("#monthly-prediction");
     selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
   });
 
-  Plotly.newPlot('cryptoChart', data, layout);
+  Plotly.newPlot('stockChart', data, layout);
   });
 }

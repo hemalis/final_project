@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock and Crypto Prediction</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body onload="updateChart('BTC')">
     <nav class="navbar">
         <div class="container">
             <div>
-                <h1>Deep learning</h1>
+                <h1>Deep Learning</h1>
                 <div class="menu">
                     <ul>
                         <li>
@@ -39,45 +40,44 @@
     <main class="dashboard">
         <div class="panel list">
             <li>
-                <button class="button">Cryptos</button>
-                <!-- <h2>BTC</h2> -->
+                <h2>Cryptos</h2>
                 <span>Daily Price</span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('BTC')">BTC</button>
-                <span>$16,018.80</span>
+                <span>$<span id="BTC"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('ETH')">ETH</button>
-                <span>$1,183.59</span>
+                <span>$<span id="ETH"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('SOL')">ADA</button>
-                <span>$12.59</span>
+                <span>$<span id="SOL"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('XRP')">XRP</button>
-                <span>$0.34</span>
+                <span>$<span id="XRP"></span></span>
             </li>
             <li>
                 <button class="button" onclick="updateChart('BNB')">BNB</button>
-                <span>$271.10</span>
+                <span>$<span id="BNB"></span></span>
             </li>
         </div>
 
         <div class="Prediction-panel">
             <div>
-                <h4>Daily Prediction</h4>
+                <h4>Next Day Prediction</h4>
                 <h1 id="daily-prediction">$0</h1>
                 <!-- <small>Accuracy rate of 85%</small> -->
             </div>
             <div>
-                <h4>Weekly Prediction</h4>
+                <h4>Next Week Prediction</h4>
                 <h1 id="weekly-prediction">$0</h1>
                 <!-- <small>Accuracy rate of 88%</small> -->
             </div>
             <div>
-                <h4>Monthly Prediction</h4>
+                <h4>Next Month Prediction</h4>
                 <h1 id="monthly-prediction">$0</h1>
                 <!-- <small>Accuracy rate of 79%</small> -->
             </div>
@@ -88,7 +88,7 @@
             </div> -->
         </div>
             
-        <div class="information">
+        <!-- <div class="information">
             <div class="box-1">
                 <h1>Information</h1>
                 <small>Market Cap</small>
@@ -97,8 +97,8 @@
                 <h1>Analysis</h1>
                 <small>Daily Volumn</small>
             </div>
-        </div>
+        </div> -->
     </main>
-    <script src="../crypto.js"></script>
+    <script src="../js/crypto.js"></script>
 </body>
 </html>

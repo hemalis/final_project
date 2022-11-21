@@ -1,51 +1,31 @@
-/* function updateChart(ticker){
-  if(ticker == "AAPL"){
-    update_AAPL_chart();
-  }
-  if(ticker == "TSLA"){
-    update_TSLA_chart();
-  }
-  if(ticker == "META"){
-    update_META_chart();
-  }
-  if(ticker == "GOOGL"){
-    update_GOOGL_chart();
-  }
-  if(ticker == "AMZN"){
-    update_AMZN_chart();
-  }
-  // get_daily_price(ticker);
-} */
+// Get daily price
+var btc = document.getElementById("BTC");
+var eth = document.getElementById("ETH");
+var sol = document.getElementById("SOL");
+var xrp = document.getElementById("XRP");
+var bnb = document.getElementById("BNB");
 
-// var btc = document.getElementById("bitcoin");
-// var eth = document.getElementById("ethereum");
-// var bnb = document.getElementById("binance");
-// var sol = document.getElementById("solana");
-// var xrp = document.getElementById("ripple");
+var liveprice = {
+  "async": true,
+  "scroosDomain": true,
+  "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Csolana%2Cripple%2Cbinancecoin&vs_currencies=usd",
+  "method": "GET",
+  "headers": {}
+}
+  
+$.ajax(liveprice).done(function (response){
+  btc.innerHTML = response.bitcoin.usd;
+  eth.innerHTML = response.ethereum.usd;
+  sol.innerHTML = response.solana.usd;
+  xrp.innerHTML = response.ripple.usd;
+  bnb.innerHTML = response.binancecoin.usd;
+});
 
-// var liveprice = {
-//     "async": true,
-//     "scroosDomain": true,
-//     "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cbinance%2Csolana%2Cripple&vs_currencies=usd",
-
-//     "method": "GET",
-//     "headers": {}
-// }
-
-// $.ajax(liveprice).done(function (response){
-//     btc.innerHTML = response.bitcoin.usd;
-//     eth.innerHTML = response.ethereum.usd;
-//     bnb.innerHTML = response.binance.usd;
-//     sol.innerHTML = response.solana.usd;
-//     xrp.innerHTML = response.ripple.usd;
-// });
-
-// Default ============================================================================================================================
-
+// Chart ============================================================================================================================
 
 function updateChart(ticker) {
-  console.log("Called");
-  d3.json(`http://127.0.0.1:5000/stock/prediction/${ticker}`,function(err, rows){
+  console.log("Called")
+  d3.json(`http://127.0.0.1:5000/crypto/prediction/${ticker}`,function(err, rows){
     var selection = d3.select("#daily-prediction");
     selection.html(`$${Math.round(rows[rows.length-1].close_prediction).toLocaleString()}`)
 
@@ -69,10 +49,7 @@ function updateChart(ticker) {
       type: "scatter",
       mode: "lines",
       name: `${ticker} Predict`,
-      x: unpack(rows, "date").map(x => { 
-        console.log(new Date(x).toISOString().slice(0, 10));
-        return new Date(x).toISOString().slice(0, 10); 
-      }),
+      x: unpack(rows, "date").map(x => new Date(x).toISOString().slice(0, 10)),
       y: unpack(rows, "close_prediction"),
       line: {color: "#ea335d"},
     };
@@ -141,27 +118,20 @@ function updateChart(ticker) {
       },
       yaxis: {
         autorange: true,
-        // range: [86.8700008333, 100],
         type: 'linear'
       }
   };
 
-  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/weekly`,function(err, rows){
+  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/weekly`,function(err, rows){
     var selection = d3.select("#weekly-prediction");
     selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
   });
 
-  d3.json(`http://127.0.0.1:5000/stock/${ticker}/average/monthly`,function(err, rows){
+  d3.json(`http://127.0.0.1:5000/crypto/${ticker}/average/monthly`,function(err, rows){
     var selection = d3.select("#monthly-prediction");
     selection.html(`$${Math.round(rows[0]).toLocaleString()}`)
   });
 
-  Plotly.newPlot('stockChart', data, layout);
+  Plotly.newPlot('cryptoChart', data, layout);
   });
 }
-
-// Get daily price
-// function get_daily_price(ticker) {
-  // const url = "https://api.twelvedata.com/price?symbol=" + ticker.toString() + "&apikey=6e1155c7ff724f1daf91647f1664883e";
-  //   console.log(url);
-// }
