@@ -1,3 +1,4 @@
+// Search Bar function
 const tableData = () => {
     const searchData = [];
     const tableEl = document.getElementById('portexe-data-table');
