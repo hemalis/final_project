@@ -31,25 +31,7 @@ Please see images below for code.
 
 ### Database
 
-PostgresSQL was used to store and manipulate. Please see image below. 'code shown below'
-
-```
-    SQL
-        #connect to SQL database
-            db_string = f"postgresql://postgres:{db_password}@127.0.0.1:5432/crypto_stock"
-            engine = create_engine(db_string)
-        # Import the stock Data
-            stock.to_sql(name='stock', con=engine, if_exists='replace')
-        # Import the stock Data
-            crypto.to_sql(name='crypto', con=engine, if_exists='replace')
-        # create a variable for the number of rows imported
-            rows_imported=0
-        # get the start_time from time.time()
-            start_time=time.time()
-            print(f'Done.{time.time()-start_time} total secons elapsed')
-```
-### Presentation
-https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM
+PostgresSQL was used to store and manipulate. Please see image below. 
 
 ![image](https://github.com/hemalis/final_project/blob/main/images/Database%20connection.jpg)
 
@@ -170,17 +152,17 @@ The disadvantages of Facebook Prohphet Model include:
 #### LSTM Model
 LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
 
-[image]()
-[image]()
-[image]()
-[image]()
-[image]()
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%231.jpg)
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%232.jpg)
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%233.jpg)
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%234.jpg)
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%235.jpg)
 
 
-#### LSTM Model Results:
+#### LSTM Model Results for BTC:
 
-[image]()
-[image]()
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20prediction%201.jpg)
+[image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20prediction%202.jpg)
 
 
 The advantages of LSTM Model are:
@@ -197,8 +179,13 @@ The disadvantages of LSTM Model include:
 ### Dashboard/Website
 * We will create a website using HTML, JavaScript, and CSS to display our analysis
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
+    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
+
     * The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
+    ![image](https://github.com/hemalis/final_project/blob/main/images/image.png)
+
     * The third page will be similar to the stock page, except it's for crypto predcition only.
+
+
     * The fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
-![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
-![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
+    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
