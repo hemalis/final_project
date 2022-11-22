@@ -58,6 +58,10 @@ Since the Pandemic, the stock market and crypto have shown different patterns. T
 ### Presentation
 https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
 
+### Project Methodology
+![image]()
+
+
 ### Data Exploration
 
 When initially starting the project we first used data sets from Polygon and CoinGecko.  The issue with the data sets from Polygon and CoinGecko was it required a lot of formatting and cleaning of the data. As we continued to look at more datasets, Yahoo Fianance's API call provided all the necessary information without all the unnecessary columns.  
@@ -229,7 +233,7 @@ The disadvantages of LSTM Model include:
     ![image](https://github.com/hemalis/final_project/blob/main/images/Home.png)
 
     * The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/image.png)
+    ![image](https://github.com/hemalis/final_project/blob/main/images/Crypto.png)
 
     * The third page will be similar to the stock page, except it's for crypto prediction only.
     ![image](https://github.com/hemalis/final_project/blob/main/images/Stock.png)
