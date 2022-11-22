@@ -1,7 +1,7 @@
 // Search Bar function
 const tableData = () => {
     const searchData = [];
-    const tableEl = document.getElementById('portexe-data-table');
+    const tableEl = document.getElementById('data-table');
     Array.from(tableEl.children[1].children).forEach(_bodyRowEL => {
         searchData.push(Array.from(_bodyRowEL.children).map(_cellEl => {
             return _cellEl.innerHTML;
@@ -18,7 +18,7 @@ const search = (arr, searchTerm) => {
 }
 
 const refreshTable = (data) => {
-    const tableBody = document.getElementById('portexe-data-table').children[1];
+    const tableBody = document.getElementById('data-table').children[1];
     tableBody.innerHTML = '';
 
     data.forEach(_row => {
@@ -34,17 +34,17 @@ const refreshTable = (data) => {
 
 const createSearchInputElement = () => {
     const el = document.createElement('input');
-    el.classList.add('portexe-search-input');
-    el.id = 'portexe-search-input';
+    el.classList.add('search-input');
+    el.id = 'search-input';
     return el;
 }
 
 const inti = () => {
-    document.getElementById('portexe-search-root').appendChild(createSearchInputElement());
+    document.getElementById('search-root').appendChild(createSearchInputElement());
 
     const initialTableData = tableData();
 
-    const searchInput = document.getElementById('portexe-search-input');
+    const searchInput = document.getElementById('search-input');
     searchInput.addEventListener('keyup', (e) => {
         refreshTable(search(initialTableData, e.target.value));
     });
