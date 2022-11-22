@@ -49,7 +49,7 @@ We are building a website to predict the future price of crypto and the stock ma
 
 ### Motivation
 
-Since the Pandemic, the stock market and crypto have shown different patterns. The stock market was consistentlu up and broke some records, however cryptocurrency prices have drastically fallen. Since crypto and blockchain is the future for the web, we were highly interested in learning about these topics & would like to deep dive into it.
+Since the Pandemic, the stock market and crypto have shown different patterns. The stock market was consistently up and broke some records, however cryptocurrency prices have drastically fallen. Since crypto and blockchain is the future for the web, we were highly interested in learning about these topics & would like to deep dive into it.
 
 ### Questions to answer
 - Select five cryptos/stocks and predict what is its highest price and lowest price in the day.
@@ -60,7 +60,11 @@ https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc
 
 ### Data Exploration
 
-We first began by sourcing crypto pricing data and stock pricing data from an API call from Yahoo Finance. This data was collected for daily prices and volume.  
+When initially starting the project we first used data sets from Polygon and CoinGecko.  The issue with the data sets from Polygon and CoinGecko was it required a lot of formatting and cleaning of the data. As we continued to look at more datasets, Yahoo Fianance's API call provided all the necessary information without all the unnecessary columns.  
+
+### Data Cleaning
+
+We began by sourcing crypto pricing data and stock pricing data from an API call from Yahoo Finance. This data was collected for daily prices and volume.  Once the API was called, we downloaded the five stock and crypto calls into a csv file. Due to the fairly clean dataset provided by the API call from Yahoo Finance, we did not need to clean the data as much as we anticipated.  We dropped a few columns, renamed columns and updated the dates as seen below in the codes.  
 
 Please see images below for code.
 ![image](https://github.com/hemalis/final_project/blob/main/images/Data%20Collection%201.jpg)
@@ -73,7 +77,7 @@ Please see images below for code.
 
 ### Database
 
-PostgresSQL was used to store and manipulate. Please see image below. 
+PostgresSQL was used to store and manipulate the data. Please see image below. 
 
 ![image](https://github.com/hemalis/final_project/blob/main/images/Database%20connection.jpg)
 
@@ -166,9 +170,8 @@ ON "Stock_prediction" ("ticker");
 
 ```
 
-### Machine Learning Model
-
-
+### Machine Learning Model Overview
+During the early stages of our Machine Learning modeling, we had planned to use regression model . However, we realized we were looking at time series issue. This required us to look at multiple machine learning models. The best models that fit for our project were Facebook Prophet and LSTM.  Even though LSTM was more accurate in our model it had more restrictions such as: maximum 7 day prediction, the model took longer to run, and the model could be ran for only one stock/crypto at a time.  Facebook Prophet is the model we chose to show on our website and presentation.  It shows the upper/lower limit and predictions, we found this to be more beneficial for stock trading.  What we learned from these two models is shown below in each respective section as well with the splitting and training the dataset.  
 
 #### Facebook Prophet Model
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
@@ -182,19 +185,19 @@ Facebook Prophet is an opensource software released by Facebook’s Core Data Sc
 ![image](https://github.com/hemalis/final_project/blob/main/images/Prophet%20Prediction%20-BTC.jpg)
 
 
-The advantages of Facebook Prohphet Model are:
+The advantages of Facebook Prophet Model are:
 
 * It is fast and accurate compared to most of its peers.
 * The Prophet model is preferred over other models when you are working with a non-linear module of data and the observations taken to change over seasons like yearly, monthly, weekly, or daily.
 * Prophet model is robust to missing values and outliers and knows how to deal with the holiday effects.
 
-The disadvantages of Facebook Prohphet Model include:
+The disadvantages of Facebook Prophet Model include:
 
 * Prophet can mistakenly believe there are a weekly seasonal component.
 * Does not compare it to a benchmark.
 
 #### LSTM Model
-LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for perdicting crypto and stock prices, we will split the data into training sets and test sets.
+LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neural network that is commonly used for regression and time series forecasting in machine learning. It can memorize data for long periods. Using LSTM is one of the best machine learning approaches for time series forecasting. LSTMs are recurrent neural networks designed to remember data for a longer period. We will start training an LSTM model for predicting crypto and stock prices, we will split the data into training sets and test sets.
 
 ![image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%231.jpg)
 ![image](https://github.com/hemalis/final_project/blob/main/images/LSTM%20%232.jpg)
@@ -212,7 +215,7 @@ LSTM stands for Long Short Term Memory Networks. It is a type of recurrent neura
 The advantages of LSTM Model are:
 
 * Most powerful approach to learning from sequential data and time series are only a special case.
-* Does not rely on specific assumptions about the data such as time series stationarity or the existence of a Date field.
+* Does not rely on specific assumptions about the data such as time series stationary or the existence of a Date field.
 
 The disadvantages of LSTM Model include:
 
@@ -220,16 +223,16 @@ The disadvantages of LSTM Model include:
 * LSTMs take longer to train
 * LSTMs require more memory to train
 
-### Vizulization
+### Visualization
 * We created a website using HTML, JavaScript, and CSS to display our analysis.
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
+    ![image](https://github.com/hemalis/final_project/blob/main/images/Home.png)
 
     * The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
     ![image](https://github.com/hemalis/final_project/blob/main/images/image.png)
 
-    * The third page will be similar to the stock page, except it's for crypto predcition only.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/Crypto.png)
+    * The third page will be similar to the stock page, except it's for crypto prediction only.
+    ![image](https://github.com/hemalis/final_project/blob/main/images/Stock.png)
 
     * The fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
+    ![image](https://github.com/hemalis/final_project/blob/main/images/About%20us.jpg)
