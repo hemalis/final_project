@@ -147,7 +147,7 @@ ul {
     justify-content: center;
 } */
 
-#portexe-search-root {
+#search-root {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,17 +164,26 @@ table td, table th {
     padding: 20px;
 }
   
-.portexe-search-root {
+.search-root {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-table tr:nth-child(even){background-color: #4a4c5ca1;}
-table tr:nth-child(odd){background-color: #363845a1;}
-table tr:hover {background-color: #7e8089a1;}
+table tr:nth-child(even){
+    background-color: #4a4c5ca1;
+}
 
-table th {
+table tr:nth-child(odd){
+    background-color: #363845a1;
+}
+
+table tr:hover {
+    background-color: #7e8089a1;
+}
+
+table th{
+    margin: 0;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 100px;
@@ -184,7 +193,7 @@ table th {
     border-collapse: collapse;
 } 
 
-.portexe-search-input {
+.search-input {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 100px;
