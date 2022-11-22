@@ -1,4 +1,47 @@
+<p align="center">
+  <img width="900" height="400" src="">
+</p>
+
+<table><tr>
+
+---
 # Stock & Crypto Prediction
+
+### Contributors:
+
+- [**Sarah Azad**] [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/smzd)
+- [**Edward Kim**] [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/3hunterman3)
+- [**Hemali Shah**] [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/hemalis)
+- [**Taiqin Wu**] [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/Taiqinwu)
+- [**Zan Zaman**] [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/ZZaman1989)
+
+<table><tr>
+
+---
+## Technologies | Languages | IDE | Data Source: 
+<details>
+<summary>Software and IDE:</summary>
+
+- [![Python]
+- [![Pandas]
+  - [![Numpy]
+  - [![Matplotlib]
+- [![VS Code]
+- [![Jupyter Notebook]
+- [![PostgreSQL]
+- [![HTML]
+  - [![CSS]
+- [![JavaScript]
+
+
+</details>
+
+<details>
+<summary>Data Sources:</summary>
+
+- Yahoo Finance
+
+</details>
 
 ### Background
 
@@ -15,8 +58,7 @@ Since the Pandemic, the stock market and crypto have shown different patterns. T
 ### Presentation
 https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
 
-### Data Collection
-* Data Source: API Yahoo Finance
+### Data Exploration
 
 We first began by sourcing crypto pricing data and stock pricing data from an API call from Yahoo Finance. This data was collected for daily prices and volume.  
 
@@ -126,6 +168,8 @@ ON "Stock_prediction" ("ticker");
 
 ### Machine Learning Model
 
+
+
 #### Facebook Prophet Model
 Facebook Prophet is an opensource software released by Facebook’s Core Data Science team. The software can help forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects; we used this as an additive to our Machine Learning model.
 
@@ -176,8 +220,8 @@ The disadvantages of LSTM Model include:
 * LSTMs take longer to train
 * LSTMs require more memory to train
 
-### Dashboard/Website
-* We will create a website using HTML, JavaScript, and CSS to display our analysis
+### Vizulization
+* We created a website using HTML, JavaScript, and CSS to display our analysis.
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
     ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
 
@@ -185,7 +229,7 @@ The disadvantages of LSTM Model include:
     ![image](https://github.com/hemalis/final_project/blob/main/images/image.png)
 
     * The third page will be similar to the stock page, except it's for crypto predcition only.
-
+    ![image]()
 
     * The fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
     ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
