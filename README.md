@@ -179,13 +179,14 @@ The disadvantages of LSTM Model include:
 ### Dashboard/Website
 * We will create a website using HTML, JavaScript, and CSS to display our analysis
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.56.53%20PM.png)
+    <img width="961" alt="Screen Shot 2022-11-23 at 3 26 02 PM" src="https://user-images.githubusercontent.com/107168891/203662918-4d888628-5976-4050-9382-27db4cfa3da5.png">
 
     * The second page will be a stock page analysis only, where it will have a table on the left to showing the daily price of the five stocks, the right will be a line graph of the stock prediction showing the actual vs. prediction. The bottom will be the prediction for daily, weekly, monthly, and yearly price.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/image.png)
+    <img width="1918" alt="Screen Shot 2022-11-23 at 3 25 51 PM" src="https://user-images.githubusercontent.com/107168891/203662938-3c4fb27e-cb74-42f0-8773-1973eeda9647.png">
+
 
     * The third page will be similar to the stock page, except it's for crypto predcition only.
 
 
     * The fourth page will be the about page, a short description of our project, our team member's name and their github, and lastly our project github.
-    ![image](https://github.com/hemalis/final_project/blob/main/images/Screen%20Shot%202022-11-13%20at%202.57.21%20PM.png)
+    <img width="1917" alt="Screen Shot 2022-11-23 at 3 26 09 PM" src="https://user-images.githubusercontent.com/107168891/203662953-ce00b004-5b94-4357-8670-3cfcc25e128b.png">
