@@ -60,6 +60,7 @@ Since the Pandemic, the stock market and crypto have shown different patterns. T
 
 ### Presentation
 https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
+https://cryptostock.s3.us-west-2.amazonaws.com/Website/html/home.html
 
 ### Project Methodology
 ![image](https://github.com/hemalis/final_project/blob/main/images/Project%20Methodology.jpg)
@@ -232,6 +233,8 @@ The disadvantages of LSTM Model include:
 
 ### Visualization
 * We created a website using HTML, JavaScript, and CSS to display our analysis.
+https://cryptostock.s3.us-west-2.amazonaws.com/Website/html/home.html
+
     * The first page will be a home page that have a search bar to look up the stock or crypto for analysis.
     ![image](https://github.com/hemalis/final_project/blob/main/images/Home.png)
 
