@@ -59,7 +59,7 @@ Since the Pandemic, the stock market and crypto have shown different patterns. T
 https://docs.google.com/presentation/d/1Lsxx2rLLdydpgQQVFcJm3d8A68OTZqWplNIjZlvc3XM/edit?usp=sharing
 
 ### Project Methodology
-![image]()
+![image](https://github.com/hemalis/final_project/blob/main/images/Project%20Methodology.jpg)
 
 
 ### Data Exploration
