@@ -29,8 +29,11 @@
 - VS Code
 - Jupyter Notebook
 - PostgreSQL
+- AWS
+- Flask
 - HTML
   - CSS
+  - JSON
 - JavaScript
 
 
