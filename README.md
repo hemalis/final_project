@@ -43,7 +43,7 @@
 <summary>Data Sources:</summary>
 
 - Yahoo Finance
-
+- Vantage
 </details>
 
 ### Background
